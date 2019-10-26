@@ -8,5 +8,6 @@ public class PlayButton : MonoBehaviour
     public void doPlay()
     {
         SceneManager.LoadScene("GameStart");
+
     }
 }
