@@ -17,13 +17,19 @@ public class CursorController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         SetPositionToMousePosition();
     }
 
     void SetPositionToMousePosition() {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        
+        Vector2 correctedMousePosition = new Vector2(
+            640f * Input.mousePosition.x / Screen.width,
+            480f * Input.mousePosition.y / Screen.height);
+
+        transform.position = Camera.main.ScreenToWorldPoint(correctedMousePosition);
         transform.position += Vector3.forward * 10f;
 
     }
