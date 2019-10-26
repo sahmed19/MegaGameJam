@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public Slider healthSlider;
 
 
-    /*Damage Image & vars
+    /*
+    Damage Image & vars
 
     public ImageConversion damageImage;
     public float flashSpeed = 5f;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
         //Dead or Damaged bools
     bool isDead;
     bool damaged;
+    bool isFlipped;
 
         //Establishes Player Health
     void Awake()
@@ -51,6 +53,12 @@ public class Player : MonoBehaviour
         {
             Attack();
         }
+
+        if (Input.GetKeyDown("E"))
+        {
+            FlipWorlds();
+        }
+
 
         //Reset damaged flad
         damaged = false;
@@ -99,6 +107,26 @@ public class Player : MonoBehaviour
             {
                 hpComponent.TakeDamage(50);
             }
+        }
+
+    }
+
+    //Method to flip the world of the player by operation on y
+    void FlipWorlds()
+    {
+
+        if (!isFlipped)
+        {
+            transform.position += Vector3.down * 100f;
+            isFlipped = true;
+        }
+
+        else
+        {
+
+            transform.position += Vector3.up * 100f;
+            isFlipped = false;
+
         }
 
     }
