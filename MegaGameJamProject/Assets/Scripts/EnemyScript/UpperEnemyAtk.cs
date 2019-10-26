@@ -8,7 +8,7 @@ public class UpperEnemyAtk : MonoBehaviour
     //Enemy Attack fields
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 25;
-
+    public Vector2 direction;
 
     //Reference to playerHealth in Player
     Player playerHealth;
@@ -50,6 +50,16 @@ public class UpperEnemyAtk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Raycast for Aggro
+        RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, direction);
+        if(hit.collider != null)
+        {
+            if(hit.distance <= 10f)
+            {
+                //Pull Aggro
+            }
+        }
 
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;

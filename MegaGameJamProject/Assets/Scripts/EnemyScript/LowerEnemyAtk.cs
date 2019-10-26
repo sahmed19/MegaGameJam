@@ -47,6 +47,16 @@ public class LowerEnemyAtk : MonoBehaviour
     void Update()
     {
 
+        //Raycast for Aggro
+        RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, direction);
+        if (hit.collider != null)
+        {
+            if (hit.distance <= 15f)
+            {
+                //Pull Aggro
+            }
+        }
+
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
