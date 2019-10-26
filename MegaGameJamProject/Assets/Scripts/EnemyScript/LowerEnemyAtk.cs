@@ -8,6 +8,8 @@ public class LowerEnemyAtk : MonoBehaviour
     //Enemy Attack fields
     public float timeBetweenAttacks = 1f;
     public int attackDamage = 100;
+    public Vector2 direction;
+
 
 
     //Reference to playerHealth in Player
