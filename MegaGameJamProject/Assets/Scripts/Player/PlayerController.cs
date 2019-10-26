@@ -80,6 +80,21 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
 
+        if(Input.GetButtonDown("Fire1")) {
+            animation.animator.SetTrigger("Attack");
+        }
+
+        if(Input.GetButtonDown("FlipWorld")) {
+            animation.animator.SetTrigger("FlipWorld");
+        }
+
+    }
+
+    public void SetCanMove(int c) {
+        movement.canMove = (c > 0);
+        if(c == 0) {
+            movement.input = Vector2.zero;
+        }
     }
 
     void FacingDirection() {

@@ -26,8 +26,8 @@ public class CursorController : MonoBehaviour
 
         
         Vector2 correctedMousePosition = new Vector2(
-            640f * Input.mousePosition.x / Screen.width,
-            480f * Input.mousePosition.y / Screen.height);
+            320f * Input.mousePosition.x / Screen.width,
+            240f * Input.mousePosition.y / Screen.height);
 
         transform.position = Camera.main.ScreenToWorldPoint(correctedMousePosition);
         transform.position += Vector3.forward * 10f;

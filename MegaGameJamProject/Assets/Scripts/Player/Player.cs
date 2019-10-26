@@ -56,11 +56,6 @@ public class Player : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetButtonDown("FlipWorld"))
-        {
-            FlipWorlds();
-        }
-
 
         //Reset damaged flad
         damaged = false;
@@ -122,6 +117,8 @@ public class Player : MonoBehaviour
     //Method to flip the world of the player by operation on y
     void FlipWorlds()
     {
+
+        CameraFollow.INSTANCE.FlipWorld();
 
         if (!isFlipped)
         {
