@@ -11,31 +11,54 @@ public class PlayerController : MonoBehaviour
         public bool facingRight;
         
         public Vector2 input;
+        public Rigidbody2D rigidbody2D;
+        public Vector2 velocity;
+    }
 
-        public CharacterController2D controller2D;
+    [System.Serializable]
+    public class Animation {
+        public SpriteRenderer spriteRenderer;
     }
 
     public Movement movement;
+    public Animation animation;
+
+    private CursorController cursor;
 
     void Start()
     {
-        movement.controller2D = GetComponent<CharacterController2D>();
+        movement.rigidbody2D = GetComponent<Rigidbody2D>();
+        animation.spriteRenderer = GetComponent<SpriteRenderer>();
+        cursor = CursorController.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GatherInput();
+        FacingDirection();       
     }
 
+    void FixedUpdate() {
+        Locomotion();
+    }
 
-    void Input() {
+    void GatherInput() {
         movement.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    void FacingDirection() {
+        movement.facingRight = cursor.transform.position.x > transform.position.x;
+        animation.spriteRenderer.flipX = !movement.facingRight;
     }
 
     void Locomotion() {
 
-        
+        Vector2 targetVelocity = movement.input.normalized * movement.speed * Time.fixedDeltaTime;
+
+        movement.velocity = Vector2.Lerp(movement.velocity, targetVelocity, movement.smoothingSpeed * Time.fixedDeltaTime);
+
+        movement.rigidbody2D.MovePosition(movement.rigidbody2D.position + movement.velocity);
 
     }
 }
