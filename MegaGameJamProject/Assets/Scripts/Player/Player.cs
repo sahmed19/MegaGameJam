@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Attack();
+            //ttack();
         }
 
 
@@ -94,7 +94,8 @@ public class Player : MonoBehaviour
     {
         //Bruh
         //Checks all colliders in circle of radius size 1f right now
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), 1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(
+            new Vector2(transform.position.x + .5f, transform.position.y), .25f);
         for(int rep = 0; rep < colliders.Length; rep++)
         {
             EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
