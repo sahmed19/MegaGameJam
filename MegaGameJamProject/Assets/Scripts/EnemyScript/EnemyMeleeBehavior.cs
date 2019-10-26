@@ -25,24 +25,15 @@ public class EnemyMeleeBehavior : MonoBehaviour
     //Attack timer
     float timer;
 
+    Animator animator;
 
     void Start()
     {
         // Setting up the references.
         player = Player.INSTANCE;
         enemyHealth = GetComponent<EnemyHP>();
+        animator = GetComponent<Animator>();
 
-    }
-
-    //Player can get hit by enemy
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //COLLIDER for the enemy range
-        if (other.gameObject == player.gameObject)
-        {
-            //Player is within X ft
-            playerInRange = true;
-        }
     }
 
 
@@ -50,25 +41,26 @@ public class EnemyMeleeBehavior : MonoBehaviour
     void Update()
     {
 
-        //Raycast for Aggro
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 10f, sightlineMask.value);
-        if(hit.collider != null && hit.collider.CompareTag("Player"))
-        {
-            //Aggro
-
-        }
-
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
-        // If the timer exceeds the time between attacks, the player is in range and this enemy is alive
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + Vector3.right * .25f, .25f);
+
+        foreach(Collider2D collider in colliders)
         {
-            Attack();
+            if(collider.CompareTag("Player") && timer >= timeBetweenAttacks && enemyHealth.currentHealth > 0)
+            {
+
+
+                animator.SetTrigger("Attack");
+                //Attack();    
+            }
         }
+
+        
     }
 
-    void Attack()
+    public void Attack()
     {
         // Reset the timer.
         timer = 0f;

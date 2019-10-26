@@ -39,6 +39,8 @@ public class EnemyHP : MonoBehaviour
         // The enemy is dead.
         isDead = true;
 
+        Debug.Log("Homie down");
+
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 2f);
 
