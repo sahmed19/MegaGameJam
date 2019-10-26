@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void AnimatingPlayer() {
-        Debug.Log(movement.input.sqrMagnitude);
         animation.animator.SetFloat("Speed", Mathf.Clamp01(movement.input.sqrMagnitude));
     }
 
