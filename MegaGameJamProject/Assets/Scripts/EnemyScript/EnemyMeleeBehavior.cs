@@ -10,14 +10,11 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public int attackDamage = 25;
     public Vector2 direction;
 
-    //Reference to playerHealth in Player
+    //Reference to player in Player
     Player player;
 
     //Reference to Enemy HP in UpperEnemyHP
     EnemyHP enemyHealth;
-
-    //Reference to GO player
-    GameObject playerObject;
 
     //In Range?
     bool playerInRange;
@@ -29,11 +26,10 @@ public class EnemyMeleeBehavior : MonoBehaviour
     float timer;
 
 
-    void Awake()
+    void Start()
     {
         // Setting up the references.
-        playerObject = GameObject.FindGameObjectWithTag("Player");
-        player = playerObject.GetComponent<Player>();
+        player = Player.INSTANCE;
         enemyHealth = GetComponent<EnemyHP>();
 
     }
@@ -42,7 +38,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //COLLIDER for the enemy range
-        if (other.gameObject == playerObject)
+        if (other.gameObject == player.gameObject)
         {
             //Player is within X ft
             playerInRange = true;
@@ -55,7 +51,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
 
         //Raycast for Aggro
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerObject.transform.position - transform.position, 10f, sightlineMask.value);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 10f, sightlineMask.value);
         if(hit.collider != null && hit.collider.CompareTag("Player"))
         {
             //Aggro

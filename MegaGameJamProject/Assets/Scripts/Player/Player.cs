@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     //Health Bar
     public Slider healthSlider;
 
+    public static Player INSTANCE;
 
     /*
     Damage Image & vars
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
         //Establishes Player Health
     void Awake()
     {
-
+        INSTANCE = this;
         currentHealth = startingHealth;
     }
 

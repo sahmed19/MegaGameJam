@@ -22,6 +22,6 @@ public class Checkpoint : MonoBehaviour
     public static void RespawnPlayer()
     {
         Debug.Log("Player Respawn");
-        player.transform.position = currentCheckpoint.transform.position;
+        Player.INSTANCE.transform.position = currentCheckpoint.transform.position;
     }
 }
