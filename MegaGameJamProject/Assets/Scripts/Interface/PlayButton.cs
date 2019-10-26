@@ -7,6 +7,6 @@ public class PlayButton : MonoBehaviour
 {
     public void doPlay()
     {
-        SceneManager.LoadScene("AidanWorkspace");
+        SceneManager.LoadScene("GameStart");
     }
 }
