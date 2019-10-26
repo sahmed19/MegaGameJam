@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
             //damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
+
         //Reset damaged flad
         damaged = false;
 
@@ -78,6 +83,23 @@ public class Player : MonoBehaviour
         //Turn off player movement
         //Death sequence
 
+
+    }
+
+    void Attack()
+    {
+        //Bruh
+        //Checks all colliders in circle of radius size 1f right now
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), 1f);
+        for(int rep = 0; rep < colliders.Length; rep++)
+        {
+            UpperEnemyHP hpComponent = colliders[rep].GetComponent<UpperEnemyHP>();
+
+            if (hpComponent != null)
+            {
+                hpComponent.TakeDamage(50);
+            }
+        }
 
     }
 

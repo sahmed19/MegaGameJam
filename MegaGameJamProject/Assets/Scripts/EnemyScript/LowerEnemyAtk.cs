@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpperEnemyAtk : MonoBehaviour
+public class LowerEnemyAtk : MonoBehaviour
 {
 
     //Enemy Attack fields
-    public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 25;
+    public float timeBetweenAttacks = 1f;
+    public int attackDamage = 100;
 
 
     //Reference to playerHealth in Player
     Player playerHealth;
-
-    //Reference to Enemy HP in UpperEnemyHP
-    UpperEnemyHP enemyHealth;
 
     //Reference to GO player
     GameObject player;
@@ -31,7 +28,6 @@ public class UpperEnemyAtk : MonoBehaviour
         // Setting up the references.
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player>();
-        enemyHealth = GetComponent<UpperEnemyHP>();
 
     }
 
@@ -55,7 +51,7 @@ public class UpperEnemyAtk : MonoBehaviour
         timer += Time.deltaTime;
 
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        if (timer >= timeBetweenAttacks && playerInRange )
         {
             Attack();
         }

@@ -19,7 +19,7 @@ public class UpperEnemyHP : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount)
     {
         // If the enemy = dead af
         if (isDead) return;
