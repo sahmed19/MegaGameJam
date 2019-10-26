@@ -85,18 +85,20 @@ public class PlayerController : MonoBehaviour
         movement.input = Vector2.zero;
         movement.rigidbody2D.velocity = Vector2.zero;
 
-        Vector2 direction = (cursor.transform.position - transform.position).normalized;    
+        Vector2 direction = (cursor.transform.position - transform.position).normalized;
 
         int dashIterations = 5;
+        float dist = movement.dashDistance/(1.0f * dashIterations);
 
         for(int i = 0; i < dashIterations; i++) {
 
-            float dist = movement.dashDistance/(1.0f * dashIterations);
-
             Vector2 velocity = direction * dist;
+
+            velocity.y *= 0.5f;
+
             dashTarget.transform.position = transform.position + new Vector3(velocity.x, velocity.y, 0f);
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(.01f);
 
             if(Physics2D.OverlapCircleAll(movement.rigidbody2D.position + velocity, .25f, movement.obstacles.value).Length > 0) {
                 break;
@@ -110,14 +112,15 @@ public class PlayerController : MonoBehaviour
             }
             */
 
-            movement.rigidbody2D.MovePosition(movement.rigidbody2D.position + velocity);
+            transform.position += new Vector3(velocity.x, velocity.y, 0f);
+            //movement.rigidbody2D.MovePosition(movement.rigidbody2D.position + velocity);
             
 
         }
 
         movement.input = direction;
 
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.05f);
 
         movement.canMove = true;
 
