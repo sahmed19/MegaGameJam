@@ -14,7 +14,8 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            currentCheckpoint = gameObject;  
+            currentCheckpoint = gameObject;
+            Debug.Log("Checkpoint!");
         }
     }
 
