@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     }
 
     //Death Method
-    void Death()
+    public void Death()
     {
 
         currentHealth = startingHealth;
