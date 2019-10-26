@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpperEnemyHP : MonoBehaviour
+public class EnemyHP : MonoBehaviour
 {
 
     //Health values

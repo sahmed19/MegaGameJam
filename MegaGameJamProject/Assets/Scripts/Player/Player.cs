@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), 1f);
         for(int rep = 0; rep < colliders.Length; rep++)
         {
-            UpperEnemyHP hpComponent = colliders[rep].GetComponent<UpperEnemyHP>();
+            EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
 
             if (hpComponent != null)
             {
