@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetKeyDown("E"))
+        if (Input.GetButtonDown("FlipWorld"))
         {
             FlipWorlds();
         }
