@@ -38,20 +38,14 @@ public class UpperEnemyHP : MonoBehaviour
     {
         // The enemy is dead.
         isDead = true;
-       
+
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 2f);
-        
+
         // Enemy cant be hit??
         //  capsuleCollider.isTrigger = true;
 
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+}
 
