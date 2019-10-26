@@ -7,6 +7,7 @@ Shader "Hidden/BattleTransitions"
 		_MainRenderTex("RenderTexture", 2D) = "white" {}
 		_MainRenderTex2("OtherRenderTexture", 2D) = "white" {}
 		_TransitionTex("Transition Texture", 2D) = "white" {}
+		_Color("TearColor", Color) = (0,0,0,1)
 		_Cutoff("Cutoff", Range(0, 1)) = 0
 	}
 
@@ -60,6 +61,7 @@ Shader "Hidden/BattleTransitions"
 				sampler2D _MainRenderTex;
 				sampler2D _MainRenderTex2;
 				float _Cutoff;
+				fixed4 _Color;
 
 				fixed4 frag(v2f i) : SV_Target
 				{
@@ -68,8 +70,13 @@ Shader "Hidden/BattleTransitions"
 					fixed4 col = tex2D(_MainRenderTex, i.uv);
 					fixed4 col2 = tex2D(_MainRenderTex2, i.uv1);
 
-					if (transit.b < _Cutoff)
+					if (transit.b < _Cutoff) {
+						if(_Cutoff - transit.b > .03f) {
 						return col2;
+						} else {
+							return _Color;
+						}
+					}
 
 					return col;
 				}					

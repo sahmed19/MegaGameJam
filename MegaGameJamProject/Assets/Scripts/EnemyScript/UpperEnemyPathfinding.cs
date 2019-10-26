@@ -11,6 +11,8 @@ public class UpperEnemyPathfinding : MonoBehaviour
 
     Animator animator;
 
+    
+
     void Start() {
         animator = GetComponent<Animator>();
         targetPosition = transform.position;
