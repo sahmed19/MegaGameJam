@@ -21,14 +21,14 @@ public class PixelPerfectMainCamera : MonoBehaviour {
 
     public void UpdateOrthoSize()
     {
-        orthoSize = (screenHeight  * .5f) / PPU;
+        orthoSize = (screenHeight * .5f) / PPU;
     }
 
     public void ApplyOrthoSize()
     {
 		pixelCamera = GetComponent<Camera> ();
 		pixelCamera.rect = new Rect (0, 0, 1, 1);
-
+        
         Camera.main.orthographicSize = orthoSize;
 		float screenRatio = (float) pixelCamera.aspect;
 		float targetRatio = 4f / 3f;
@@ -37,7 +37,7 @@ public class PixelPerfectMainCamera : MonoBehaviour {
 
 		float screenWidth = targetRatio/screenRatio;
 
-		Rect rect = new Rect ((1-screenWidth)/2, 0, screenWidth, 1);
+		Rect rect = new Rect ((1-screenWidth)/2f, 0, screenWidth, 1);
 
 		pixelCamera.rect = rect;
 
