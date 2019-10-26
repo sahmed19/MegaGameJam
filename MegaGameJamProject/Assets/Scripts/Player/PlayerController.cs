@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [System.Serializable]
     public class AnimationAndTurning {
         public SpriteRenderer spriteRenderer;
+        public Animator animator;
     }
 
     public Movement movement;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         movement.rigidbody2D = GetComponent<Rigidbody2D>();
         animation.spriteRenderer = GetComponent<SpriteRenderer>();
+        animation.animator = GetComponent<Animator>();
         cursor = CursorController.instance;
     }
 
@@ -48,7 +50,8 @@ public class PlayerController : MonoBehaviour
         if(movement.canMove) {
             GatherInput();
         }
-        FacingDirection();       
+        FacingDirection();
+        AnimatingPlayer();
     }
 
     void FixedUpdate() {
@@ -68,6 +71,11 @@ public class PlayerController : MonoBehaviour
     void FacingDirection() {
         movement.facingRight = cursor.transform.position.x > transform.position.x;
         animation.spriteRenderer.flipX = !movement.facingRight;
+    }
+
+    void AnimatingPlayer() {
+        Debug.Log(movement.input.sqrMagnitude);
+        animation.animator.SetFloat("Speed", Mathf.Clamp01(movement.input.sqrMagnitude));
     }
 
     void Locomotion() {
