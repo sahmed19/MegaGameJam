@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [System.Serializable]
     public class Movement {
+        [HideInInspector]
         public float speed;
+        public float overworldSpeed = 100;
+        public float underworldSpeed = 300;
         public float smoothingSpeed;
         public bool facingRight;
         
@@ -33,10 +36,11 @@ public class PlayerController : MonoBehaviour
 
     private CursorController cursor;
 
-    public GameObject dashTarget;
+    private Player player;
 
     void Start()
     {
+        player = GetComponent<Player>();
         movement.rigidbody2D = GetComponent<Rigidbody2D>();
         animation.spriteRenderer = GetComponent<SpriteRenderer>();
         animation.animator = GetComponent<Animator>();
@@ -46,7 +50,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UnderworldMechanics();
         if(movement.canMove) {
             GatherInput();
         }
@@ -56,13 +60,23 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() {
         Locomotion();
-        
+    }
+
+    void UnderworldMechanics() {
+        bool inUnderworld = player.PlayerInUnderworld();
+
+        //Can only dash in underworld
+        movement.canUseDash = inUnderworld;
+
+        movement.speed = inUnderworld? movement.underworldSpeed : movement.overworldSpeed;
+
     }
 
     void GatherInput() {
         movement.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if(Input.GetButtonDown("Fire2")) {
+        
+        if(movement.canUseDash && Input.GetButtonDown("Fire2")) {
             StartCoroutine(Dash());
         }
 
@@ -103,8 +117,6 @@ public class PlayerController : MonoBehaviour
             Vector2 velocity = direction * dist;
 
             velocity.y *= 0.5f;
-
-            dashTarget.transform.position = transform.position + new Vector3(velocity.x, velocity.y, 0f);
 
             yield return new WaitForSeconds(.01f);
 

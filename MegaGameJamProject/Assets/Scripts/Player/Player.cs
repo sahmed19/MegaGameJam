@@ -34,6 +34,9 @@ public class Player : MonoBehaviour
         currentHealth = startingHealth;
     }
 
+    public bool PlayerInUnderworld() {
+        return isFlipped;
+    }
 
     // Update is called once per frame
     void Update()
@@ -86,7 +89,8 @@ public class Player : MonoBehaviour
     void Death()
     {
 
-        isDead = true;
+        currentHealth = startingHealth;
+        Checkpoint.RespawnPlayer();
 
         //Turn off player movement
         //Death sequence
@@ -107,6 +111,13 @@ public class Player : MonoBehaviour
             {
                 hpComponent.TakeDamage(50);
             }
+
+            Statue statue = colliders[rep].GetComponent<Statue>();
+            
+            if(statue != null) {
+                statue.Break();
+            }
+
         }
 
     }
