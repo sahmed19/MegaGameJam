@@ -3710,7 +3710,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 0}
 --- !u!114 &546234976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3725,6 +3724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement:
     speed: 300
+    overworldSpeed: 100
+    underworldSpeed: 300
     smoothingSpeed: 15
     facingRight: 0
     input: {x: 0, y: 0}
@@ -3740,7 +3741,6 @@ MonoBehaviour:
   animation:
     spriteRenderer: {fileID: 0}
     animator: {fileID: 0}
-  dashTarget: {fileID: 1022361417}
 --- !u!50 &546234977
 Rigidbody2D:
   serializedVersion: 4
