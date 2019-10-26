@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameStart.unity
     guid: 9ee02c8699f511d498c5e1ebe654245d
+  - enabled: 1
+    path: Assets/Scenes/Sheehan_Workspace.unity
+    guid: 1778362616c5ab6488d199e6b0430ccc
   m_configObjects: {}

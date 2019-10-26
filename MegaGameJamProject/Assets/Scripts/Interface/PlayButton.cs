@@ -7,6 +7,7 @@ public class PlayButton : MonoBehaviour
 {
     public void doPlay()
     {
-        SceneManager.LoadScene("GameStart");
+        SceneManager.LoadScene("Sheehan_Workspace");
+
     }
 }

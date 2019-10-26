@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
 
-    //Health Bar
-    public Slider healthSlider;
 
     public static Player INSTANCE;
 
@@ -78,8 +76,6 @@ public class Player : MonoBehaviour
         //Damage taken
         currentHealth -= amount;
 
-        //Health Slider
-        healthSlider.value = currentHealth;
 
         //Player dies
         if (currentHealth <= 0 && !isDead) Death();
@@ -87,7 +83,7 @@ public class Player : MonoBehaviour
     }
 
     //Death Method
-    void Death()
+    public void Death()
     {
 
         currentHealth = startingHealth;
