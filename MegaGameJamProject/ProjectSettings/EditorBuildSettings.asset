@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 765aeb29a5ded8743a517e0da1e9b1a0
+  - enabled: 1
+    path: Assets/Scenes/AidanWorkspace.unity
+    guid: 311feec241d28db40838dbd67b1e8f0a
   m_configObjects: {}
