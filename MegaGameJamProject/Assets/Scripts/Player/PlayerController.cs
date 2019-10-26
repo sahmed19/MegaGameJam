@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void FacingDirection() {
+        movement.facingRight = cursor.transform.position.x > transform.position.x;
         animation.spriteRenderer.flipX = !movement.facingRight;
     }
 
