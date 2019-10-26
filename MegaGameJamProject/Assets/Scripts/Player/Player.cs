@@ -86,7 +86,8 @@ public class Player : MonoBehaviour
     void Death()
     {
 
-        isDead = true;
+        currentHealth = startingHealth;
+        Checkpoint.RespawnPlayer();
 
         //Turn off player movement
         //Death sequence
