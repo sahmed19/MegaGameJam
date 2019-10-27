@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5022671940343696310}
   - component: {fileID: 5022671940343696311}
-  - component: {fileID: 5022671940343696264}
-  - component: {fileID: 5022671940343696265}
   - component: {fileID: 5022671940343696309}
   m_Layer: 0
   m_Name: Arrow
@@ -83,43 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5022671940343696264
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5022671940343696266}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!58 &5022671940343696265
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5022671940343696266}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.005142212, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.0945282
 --- !u!114 &5022671940343696309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,4 +94,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  arrow: {fileID: 5022671940343696264}
+  attackDamage: 25
+  arrow: {fileID: 0}

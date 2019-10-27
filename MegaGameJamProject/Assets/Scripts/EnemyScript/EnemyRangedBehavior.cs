@@ -12,7 +12,7 @@ public class EnemyRangedBehavior : MonoBehaviour
     public Vector2 direction;
 
     //Reference to Projectile
-    public GameObject arrowPrefab;
+    public Projectile arrowPrefab;
 
     //Reference to player in Player
     Player player;
@@ -78,6 +78,9 @@ public class EnemyRangedBehavior : MonoBehaviour
         timer = 0f;
 
         //Instantiate instance of arrow projectile
-        Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+        Projectile projectile = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+
+        projectile.direction = (player.transform.position - transform.position).normalized;
+        projectile.layermaskValue = sightlineMask.value;
     }
 }

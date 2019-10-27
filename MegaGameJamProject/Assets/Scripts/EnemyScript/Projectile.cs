@@ -5,29 +5,37 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-    public float speed = 20f;
+    public float speed = 2f;
     public int attackDamage = 25;
-
-    public Rigidbody2D arrow;
     //Reference to player in Player
 
+    public Vector3 direction = Vector3.zero;
 
     Player player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        arrow.velocity = transform.right * speed;
-    }
+    public int layermaskValue = 0;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Update()
     {
-       
-        Destroy(gameObject);
-        if (other.CompareTag("Player"))
+
+        float distance = speed * Time.deltaTime;
+
+        RaycastHit2D projectileRaycast = Physics2D.Raycast(transform.position, direction, distance, layermaskValue);
+
+        if(projectileRaycast.collider != null)
         {
-            player.TakeDamage(attackDamage);
+
+            if (projectileRaycast.collider.CompareTag("Player"))
+            {
+                player.TakeDamage(attackDamage);
+                
+            }
+
+            Destroy(gameObject);
+
         }
 
+
+        transform.position += distance * direction;
     }
 }
