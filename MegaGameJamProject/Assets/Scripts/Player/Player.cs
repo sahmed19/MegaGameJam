@@ -107,14 +107,20 @@ public class Player : MonoBehaviour
 
             if (hpComponent != null)
             {
-                hpComponent.TakeDamage(1);
+                hpComponent.TakeDamage(0);
                 somethingHit = true;
             }
 
             EnemyMeleeBehavior meleeBehavior = colliders[rep].GetComponent<EnemyMeleeBehavior>();
+            EnemyRangedBehavior rangedBehavior = colliders[rep].GetComponent<EnemyRangedBehavior>();
 
             if(meleeBehavior != null) {
-                meleeBehavior.AddToVelocity(4f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                meleeBehavior.AddToVelocity(12f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                somethingHit = true;
+            }
+
+            if(rangedBehavior != null) {
+                rangedBehavior.AddToVelocity(12f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
@@ -129,6 +135,7 @@ public class Player : MonoBehaviour
 
         if(somethingHit) {
             CameraFollow.INSTANCE.ShakeScreen(1f);
+            SoundFXManager.instance.PlaySound("FX", "Hit_Small");
         }
 
         CameraFollow.INSTANCE.ShakeScreen(.3f);
@@ -155,12 +162,12 @@ public class Player : MonoBehaviour
             EnemyRangedBehavior rangedBehavior = colliders[rep].GetComponent<EnemyRangedBehavior>();
 
             if(meleeBehavior != null) {
-                meleeBehavior.AddToVelocity(5f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                meleeBehavior.AddToVelocity(1f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
             if(rangedBehavior != null) {
-                rangedBehavior.AddToVelocity(6f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                rangedBehavior.AddToVelocity(1f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
@@ -171,14 +178,11 @@ public class Player : MonoBehaviour
                 somethingHit = true;
             }
 
-            if(somethingHit) {
-                
-            }
-
         }
 
         if(somethingHit) {
             CameraFollow.INSTANCE.ShakeScreen(1f);
+            SoundFXManager.instance.PlaySound("FX", "Hit_Small");
         }
 
         CameraFollow.INSTANCE.ShakeScreen(1f);
@@ -190,11 +194,12 @@ public class Player : MonoBehaviour
     {
         
         controller.animation.animator.SetBool("Ghost", !isFlipped);
-
+        SoundFXManager.instance.PlaySound("FX", "Bell", false, .5f, Random.Range(.8f, 1.2f));
         CameraFollow.INSTANCE.FlipWorld();
 
         if (!isFlipped)
         {
+            SoundFXManager.instance.PlaySound("Ambience", "Wind1", true);
             controller.movement.dashCount = 3;
             collider2D.radius = .25f;
             transform.position += Vector3.down * 100f;
@@ -205,6 +210,7 @@ public class Player : MonoBehaviour
 
         else
         {
+            SoundFXManager.instance.StopSound("Ambience", "Wind1");
             controller.movement.dashCount = 0;
             collider2D.radius = .5f;
             transform.position += Vector3.up * 100f;

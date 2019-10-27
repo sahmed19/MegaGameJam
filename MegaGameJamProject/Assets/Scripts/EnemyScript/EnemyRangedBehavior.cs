@@ -130,6 +130,8 @@ public class EnemyRangedBehavior : MonoBehaviour
 
     void Shoot()
     {
+
+        SoundFXManager.instance.PlaySound("FX", "Crossbow", false, .3f, Random.Range(.8f, 1.2f));
         // Reset the timer.
         timer = 0f;
 

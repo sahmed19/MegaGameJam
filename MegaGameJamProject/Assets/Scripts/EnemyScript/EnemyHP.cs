@@ -71,21 +71,26 @@ public class EnemyHP : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        
+
+        // If the enemy = dead af
+        if (isDead) {
+            
+            return;
+        }
+
         if(myMelee != null) {
             myMelee.FacePlayer();
         } else if(myRanged != null) {
             myRanged.FacePlayer();
         }
 
-        // If the enemy = dead af
-        if (isDead) return;
-
         // Take hit
         currentHealth -= amount;
         StartCoroutine(FlashForDamage());
         
         if(bloodParticles != null) {
-            bloodParticles.Play();
+            bloodParticles.Emit(amount * 5);
         }
         
         // If enemy dies
@@ -100,6 +105,8 @@ public class EnemyHP : MonoBehaviour
     {
         // The enemy is dead.
         isDead = true;
+
+        SoundFXManager.instance.PlaySound("main", "Thunder");
 
         Debug.Log("Homie down");
 

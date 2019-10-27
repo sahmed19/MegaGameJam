@@ -26,6 +26,8 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     Vector3 direction;
 
+    public float returnTimer;
+
     void Start()
     {
         
@@ -41,8 +43,16 @@ public class EnemyMeleeBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Player.INSTANCE.PlayerInUnderworld()) {
+            returnTimer = 1.0f;
+        }
         
-        if(!enemyHealth.isDead) {
+        if(returnTimer > 0) {
+            returnTimer -= Time.deltaTime;
+        }
+
+        if(!enemyHealth.isDead && returnTimer <= 0f) {
             
             if(PlayerInRange()) {
                 animator.SetTrigger("Attack");
