@@ -1,19 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class AudioManager : MonoBehaviour
 {
 
     AudioLowPassFilter lowPassFilter;
-    [SerializeField] AudioClip persistentUpper;
     [SerializeField] AudioClip nonPersistentUpper;
-    [SerializeField] AudioClip persistentAbyss;
     [SerializeField] AudioClip nonPersistentAbyss;
     public bool gameStarted;
     AudioSource audioNonPersistent;
-    AudioSource audioPersistent;
 
     //Preserves Audio Source
     private void Awake()
@@ -29,51 +25,25 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (Player.INSTANCE != null)
+        if (gameStarted)
         {
-            lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 1000 : 5000;
-
-            if (gameStarted)
+            if (Player.INSTANCE != null)
             {
-                if (!Player.INSTANCE.PlayerInUnderworld())
-                {
-                    audioPersistent = new AudioSource();
-                    audioPersistent.clip = nonPersistentUpper;
-                    audioPersistent.volume = 0f;
-                    FadeIn();
-                }
-
-                else
-                {
- 
-                }
+                lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 1000 : 5000;
             }
         }
     }
+    
+        
+    
 
     public void StartGameAudio()
     {
         gameStarted = true;
     }
 
-    void PlayOnce(AudioClip clip)
+    void PlayNonPersistent(AudioClip clip)
     {
-        audioNonPersistent.PlayOneShot(clip, 0f);
-    }
-
-    void PlayPersistent(AudioClip clip)
-    {
-
-    }
-
-    void FadeIn()
-    {
-        float fadeTime = 2f;
-
-        while(audioPersistent.volume < 1f)
-        {
-            audioPersistent.volume += Time.deltaTime / fadeTime;
-            Debug.Log(audioPersistent.volume);
-        }
+        audioNonPersistent.PlayOneShot(clip, 0.7f);
     }
 }
