@@ -12,22 +12,24 @@ public class PopUp : MonoBehaviour
     [SerializeField] bool destroyOnClick;
     [SerializeField] bool destroyOnKey;
     [SerializeField] string key;
+    bool poppedUp;
 
     void Start()
     {
         TextTransparencyReset();
+        poppedUp = false;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && destroyOnClick)
+        if (Input.GetMouseButtonDown(0) && destroyOnClick && poppedUp)
         {
             DestroyText();
         }
 
         if(key != "")
         {
-            if (Input.GetKeyDown(key) && destroyOnKey)
+            if (Input.GetKeyDown(key) && destroyOnKey && poppedUp)
             {
                 DestroyText();
             }
@@ -36,6 +38,7 @@ public class PopUp : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        poppedUp = true;
         Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         popUpText.transform.position = collision.gameObject.transform.position + offset;
         popUpText.CrossFadeAlpha(100, fadeSpeed, false);
