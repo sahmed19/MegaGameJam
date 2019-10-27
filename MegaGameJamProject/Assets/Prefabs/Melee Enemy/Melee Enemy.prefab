@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 9122324738560433180, guid: 2874d949e2a62a3449b606524ec28b60,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 1
   seeDistance: 5
-  facingRight: 0
+  facingRight: 1
   sightlineMask:
     serializedVersion: 2
     m_Bits: 369098752
@@ -168,6 +168,9 @@ MonoBehaviour:
   isDead: 0
   bloodParticles: {fileID: 7505403343391547898}
   corpse: {fileID: 4796928180581305466, guid: 31cf1776f022d5045953173a354c3420, type: 3}
+  pitfall:
+    serializedVersion: 2
+    m_Bits: 268435456
 --- !u!114 &493843547
 MonoBehaviour:
   m_ObjectHideFlags: 0

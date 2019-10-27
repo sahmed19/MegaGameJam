@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
     bool isDead;
     bool isFlipped;
 
+    public PitfallDetector pitfallDetector;
+    bool inPitfall = false;
+    float pitfallScore = 0;
+
     CircleCollider2D collider2D;
 
         //Establishes Player Health
@@ -53,7 +57,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-
+        Pitfallin();
 
     }
 
@@ -133,7 +137,7 @@ public class Player : MonoBehaviour
 
     void HeavyAttack() {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
-        new Vector2(transform.position.x + .75f * (controller.movement.facingRight? 1f : -1f), transform.position.y), new Vector2(1f, .5f), 0f);
+        new Vector2(transform.position.x + .75f * (controller.movement.facingRight? 1f : -1f), transform.position.y), new Vector2(1f, .7f), 0f);
         
         bool somethingHit = false;
         for(int rep = 0; rep < colliders.Length; rep++)
@@ -148,9 +152,15 @@ public class Player : MonoBehaviour
             }
 
             EnemyMeleeBehavior meleeBehavior = colliders[rep].GetComponent<EnemyMeleeBehavior>();
+            EnemyRangedBehavior rangedBehavior = colliders[rep].GetComponent<EnemyRangedBehavior>();
 
             if(meleeBehavior != null) {
-                meleeBehavior.AddToVelocity(4f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                meleeBehavior.AddToVelocity(7f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                somethingHit = true;
+            }
+
+            if(rangedBehavior != null) {
+                rangedBehavior.AddToVelocity(10f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
@@ -209,6 +219,43 @@ public class Player : MonoBehaviour
             return -1f;
         } else {
             return (spark.transform.position - transform.position).sqrMagnitude;
+        }
+
+    }
+    void Pitfallin() {
+
+
+
+        //pitfallDetector.transform.position = (isFlipped? transform.position + Vector3.up * 100f : transform.position);
+
+        inPitfall = pitfallDetector.IsInPitfall();
+
+        if(inPitfall) {
+        Debug.Log("IN PITFALL!");
+        }
+
+        //pitfallBlack.enabled = inPitfall;
+
+        if(inPitfall && !PlayerInUnderworld()) {
+            
+            pitfallScore += .3f * Time.deltaTime;
+
+            if(pitfallScore > .3f) {
+                controller.movement.canMove = false;
+            }
+
+            Mathf.Clamp01(pitfallScore);
+            transform.localScale = Vector3.one * Mathf.Round((1f-pitfallScore)*16f)/16f;
+            
+            //controller.movement.velocity += (pitfallScore * Vector2.down);
+
+            if(pitfallScore >= .99f) {
+                TakeDamage(5);
+            }
+
+        } else {
+            transform.localScale = Vector3.one;
+            pitfallScore = 0f;
         }
 
     }

@@ -32,6 +32,10 @@ public class CameraFollow : MonoBehaviour {
         INSTANCE = this;
     }
 
+    void Start() {
+        proxyPosition = target.position;
+    }
+
     void Update() {
         eqMagnitude = Mathf.Clamp(eqMagnitude - Time.deltaTime * 3.0f, 0f, 5f);
         if(eqMagnitude < 0) {
