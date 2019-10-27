@@ -78,7 +78,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
             if (player.currentHealth > 0)
             {
                 // ... damage the player.
-                player.TakeDamage(attackDamage);
+                player.TakeDamage(attackDamage, Vector2.right * 5.0f);
             }
         }
     }
