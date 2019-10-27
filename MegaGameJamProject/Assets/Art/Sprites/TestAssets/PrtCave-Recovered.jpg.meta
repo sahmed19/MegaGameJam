@@ -1,0 +1,1603 @@
+fileFormatVersion: 2
+guid: 6a7a8236c900f2b42b6ada983c46391b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5332761126305478334
+    second: PrtCave-Recovered_0
+  - first:
+      213: 6864154946909943205
+    second: PrtCave-Recovered_1
+  - first:
+      213: 5157963053954610447
+    second: PrtCave-Recovered_2
+  - first:
+      213: -7722079470681034075
+    second: PrtCave-Recovered_3
+  - first:
+      213: -7856060831867984851
+    second: PrtCave-Recovered_4
+  - first:
+      213: -4178008564707898838
+    second: PrtCave-Recovered_5
+  - first:
+      213: -5555571414707321938
+    second: PrtCave-Recovered_6
+  - first:
+      213: -1775632420322244824
+    second: PrtCave-Recovered_7
+  - first:
+      213: -27631637955637091
+    second: PrtCave-Recovered_8
+  - first:
+      213: 78945076697779291
+    second: PrtCave-Recovered_9
+  - first:
+      213: -4897060514626652656
+    second: PrtCave-Recovered_10
+  - first:
+      213: -6696282180081872452
+    second: PrtCave-Recovered_11
+  - first:
+      213: 8651857155627894323
+    second: PrtCave-Recovered_12
+  - first:
+      213: 1598972578581986746
+    second: PrtCave-Recovered_13
+  - first:
+      213: 1409374943997186834
+    second: PrtCave-Recovered_14
+  - first:
+      213: -1588987358663707024
+    second: PrtCave-Recovered_15
+  - first:
+      213: 9016678483867049326
+    second: PrtCave-Recovered_16
+  - first:
+      213: -5456191064809473068
+    second: PrtCave-Recovered_17
+  - first:
+      213: -1553751278049519739
+    second: PrtCave-Recovered_18
+  - first:
+      213: 7594894551045576210
+    second: PrtCave-Recovered_19
+  - first:
+      213: -1802947928957067210
+    second: PrtCave-Recovered_20
+  - first:
+      213: 2747539934321532255
+    second: PrtCave-Recovered_21
+  - first:
+      213: -8909742497791197980
+    second: PrtCave-Recovered_22
+  - first:
+      213: 1820697910691469766
+    second: PrtCave-Recovered_23
+  - first:
+      213: -8270063438677387213
+    second: PrtCave-Recovered_24
+  - first:
+      213: 660715346153191123
+    second: PrtCave-Recovered_25
+  - first:
+      213: -332835135160705086
+    second: PrtCave-Recovered_26
+  - first:
+      213: -1179253511605288937
+    second: PrtCave-Recovered_27
+  - first:
+      213: -2968414762611166972
+    second: PrtCave-Recovered_28
+  - first:
+      213: 5859755060513248614
+    second: PrtCave-Recovered_29
+  - first:
+      213: 18595282115460282
+    second: PrtCave-Recovered_30
+  - first:
+      213: 8656659529032385500
+    second: PrtCave-Recovered_31
+  - first:
+      213: -5648558352001312110
+    second: PrtCave-Recovered_32
+  - first:
+      213: -2696909726021571947
+    second: PrtCave-Recovered_33
+  - first:
+      213: -8333196101244404394
+    second: PrtCave-Recovered_34
+  - first:
+      213: 7054549996955829093
+    second: PrtCave-Recovered_35
+  - first:
+      213: -3656705194523172256
+    second: PrtCave-Recovered_36
+  - first:
+      213: 599473955341891642
+    second: PrtCave-Recovered_37
+  - first:
+      213: 292835089135248468
+    second: PrtCave-Recovered_38
+  - first:
+      213: -1476842821503462316
+    second: PrtCave-Recovered_39
+  - first:
+      213: 8500849318137345195
+    second: PrtCave-Recovered_40
+  - first:
+      213: 5166095337107648290
+    second: PrtCave-Recovered_41
+  - first:
+      213: 1392330723695887987
+    second: PrtCave-Recovered_42
+  - first:
+      213: -3312298921636186040
+    second: PrtCave-Recovered_43
+  - first:
+      213: 612299855161726095
+    second: PrtCave-Recovered_44
+  - first:
+      213: -2321855498093289944
+    second: PrtCave-Recovered_45
+  - first:
+      213: 7225676363881530465
+    second: PrtCave-Recovered_46
+  - first:
+      213: -6610424124919551369
+    second: PrtCave-Recovered_47
+  - first:
+      213: 1196243721669628899
+    second: PrtCave-Recovered_48
+  - first:
+      213: -4307410497132220698
+    second: PrtCave-Recovered_49
+  - first:
+      213: -3852688207560929614
+    second: PrtCave-Recovered_50
+  - first:
+      213: 4079467129022250482
+    second: PrtCave-Recovered_51
+  - first:
+      213: -7104011256392217541
+    second: PrtCave-Recovered_52
+  - first:
+      213: 3470726004343932707
+    second: PrtCave-Recovered_53
+  - first:
+      213: -6586142970479837645
+    second: PrtCave-Recovered_54
+  - first:
+      213: 9173819178960036254
+    second: PrtCave-Recovered_55
+  - first:
+      213: 6756342357622145110
+    second: PrtCave-Recovered_56
+  - first:
+      213: -3063250803993148780
+    second: PrtCave-Recovered_57
+  - first:
+      213: -1419896892295736296
+    second: PrtCave-Recovered_58
+  - first:
+      213: 2561937315539530435
+    second: PrtCave-Recovered_59
+  - first:
+      213: -4225510611031896612
+    second: PrtCave-Recovered_60
+  - first:
+      213: 559499083545325860
+    second: PrtCave-Recovered_61
+  - first:
+      213: 5619874396368621919
+    second: PrtCave-Recovered_62
+  - first:
+      213: -8639698371532329608
+    second: PrtCave-Recovered_63
+  - first:
+      213: 9013510213491861334
+    second: PrtCave-Recovered_64
+  - first:
+      213: 5281516272131250612
+    second: PrtCave-Recovered_65
+  - first:
+      213: -8812466232856359309
+    second: PrtCave-Recovered_66
+  - first:
+      213: 928675073791959060
+    second: PrtCave-Recovered_67
+  - first:
+      213: 3270440341120526039
+    second: PrtCave-Recovered_68
+  - first:
+      213: -3089816679335342711
+    second: PrtCave-Recovered_69
+  - first:
+      213: -6904618257100892102
+    second: PrtCave-Recovered_70
+  - first:
+      213: 1767343758125939011
+    second: PrtCave-Recovered_71
+  - first:
+      213: -8484295449275359085
+    second: PrtCave-Recovered_72
+  - first:
+      213: -5244027990689605173
+    second: PrtCave-Recovered_73
+  - first:
+      213: -6142360181936951108
+    second: PrtCave-Recovered_74
+  - first:
+      213: 6073957918576858769
+    second: PrtCave-Recovered_75
+  - first:
+      213: 1549223744786650765
+    second: PrtCave-Recovered_76
+  - first:
+      213: 4363089768700091160
+    second: PrtCave-Recovered_77
+  - first:
+      213: 4156069415983161725
+    second: PrtCave-Recovered_78
+  - first:
+      213: 1483854313915346580
+    second: PrtCave-Recovered_79
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PrtCave-Recovered_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3241bf830efce7f408cb83f5783b790f
+      internalID: -5332761126305478334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1df0dc6a3debbf439f8c5e33636206a
+      internalID: 6864154946909943205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09b45d2358be384ca40dcd2eda0b8dc
+      internalID: 5157963053954610447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b6095a9ac2de6478bdab274eada52d
+      internalID: -7722079470681034075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b31943039029a4cb6c1a756ebbd7cb
+      internalID: -7856060831867984851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83838c137f4f53248b31f459cd1cccda
+      internalID: -4178008564707898838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd47512e2ee7a904089add31d914b9a6
+      internalID: -5555571414707321938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4729b5bbe026bde4698f47a725e16e32
+      internalID: -1775632420322244824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8655b4e5f03c942abc9fe814888f9b
+      internalID: -27631637955637091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_9
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4da22414c6e3d45b7c174bf2f7eefa
+      internalID: 78945076697779291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_10
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e756abcb881b2744eadd782a9c9ac602
+      internalID: -4897060514626652656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48236344170aad24ba2a481550668956
+      internalID: -6696282180081872452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_12
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436e9ef18a5a17246896cd51b365a16e
+      internalID: 8651857155627894323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_13
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8461ee084f0854a9b504cbe24af690
+      internalID: 1598972578581986746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_14
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 255
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90490f353cb89ba4a97e1d85ba1ce364
+      internalID: 1409374943997186834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae8d7abb2f4e0c4599a9d7bbd718ab4
+      internalID: -1588987358663707024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2deb9f480380e479682326db9a55c5
+      internalID: 9016678483867049326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_17
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6962ac67e0f532c40ab3caa5a3b3a709
+      internalID: -5456191064809473068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_18
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ce2ff4cbc0eb646bf9db50955f7f96
+      internalID: -1553751278049519739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_19
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06842ed397c65d240bc39d25524a7bd7
+      internalID: 7594894551045576210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_20
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ecd43366bc99c4d9dd676c3dfdafa8
+      internalID: -1802947928957067210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_21
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bedcddd8d40ec40ae102ac47fbb5dc
+      internalID: 2747539934321532255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_22
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d66c9380a1458e43a5b48bb71fab734
+      internalID: -8909742497791197980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_23
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cdd368507ce994eb9e94bc4d4a2c13
+      internalID: 1820697910691469766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_24
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7c9d80baefb744a90ef21dd8b17696
+      internalID: -8270063438677387213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_25
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b49f4a1376bb5649b4d02fc3351f53e
+      internalID: 660715346153191123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_26
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d14f5b896a70984fbade31d9c74527a
+      internalID: -332835135160705086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_27
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f206468421f49634f96624e1164a1bca
+      internalID: -1179253511605288937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_28
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458de28081260a74b98ccf2dc059d392
+      internalID: -2968414762611166972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_29
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 191
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc248c78b8cf0b43b66b1f504f1235a
+      internalID: 5859755060513248614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a991e8f8c375e47bc7903bb85dc2c5
+      internalID: 18595282115460282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_31
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6743e5d79843fc48b187f9484d593bf
+      internalID: 8656659529032385500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_32
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95244e31f8a391d4996f086bd9c8f001
+      internalID: -5648558352001312110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_33
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5edf4c24058afe45a1a504cbfe10d0a
+      internalID: -2696909726021571947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_34
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1500116e666a3474cbfa1be77519ad99
+      internalID: -8333196101244404394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_35
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434501e6ec01e344784421fbb6417242
+      internalID: 7054549996955829093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_36
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a995a060c0cad7418b2831aaed0bf1d
+      internalID: -3656705194523172256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_37
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed99f14a1eb73541b2051027d5b19f5
+      internalID: 599473955341891642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_38
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa257901192a6d47bac23f92968f52e
+      internalID: 292835089135248468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_39
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a34fcb75465fae49b59e205568f81f8
+      internalID: -1476842821503462316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_40
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772c66c3a954b0246ab7419e4e9be30d
+      internalID: 8500849318137345195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_41
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7238f90645dce43a73edbfb8eb51a6
+      internalID: 5166095337107648290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_42
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384742939fe1f5f46b0ce3ef156dd559
+      internalID: 1392330723695887987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_43
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328b8dcdda9003b4d99e5b2a037ca668
+      internalID: -3312298921636186040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_44
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf6535ff4f192547abc682983b9f4d1
+      internalID: 612299855161726095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_45
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b35b3ebf8626c54aa9942ac108b8250
+      internalID: -2321855498093289944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_46
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bf327eedf98cc4a8e63e98ba02af4d
+      internalID: 7225676363881530465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_47
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7684e3d00c5cc4c4f94a61c0f5fe719d
+      internalID: -6610424124919551369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_48
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e29dddfc601e1545ae0f0ee121b5b74
+      internalID: 1196243721669628899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_49
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5426542281a08d84cb0498f95e996566
+      internalID: -4307410497132220698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_50
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b978c6aaaa08110428f05734b836c616
+      internalID: -3852688207560929614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_51
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1290da1833c5f624da477d58de0496a5
+      internalID: 4079467129022250482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_52
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643def57f77f5a642939f5ff54499967
+      internalID: -7104011256392217541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_53
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c89996d12165b44b1ec6f6b365e7bf
+      internalID: 3470726004343932707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_54
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328ac0d211c479b409bdab981c6a4880
+      internalID: -6586142970479837645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_55
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11ec980eb6f16c4b908c08d1956800b
+      internalID: 9173819178960036254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_56
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0738cc40b6f468447a2e6498e02698fc
+      internalID: 6756342357622145110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_57
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbda3ad3649a2047b50d98f401b799a
+      internalID: -3063250803993148780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_58
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f207e3c96e1cecf42802b9fd51407bc2
+      internalID: -1419896892295736296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrtCave-Recovered_59
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1045cf14f205f2e499888ad245d5ec8d
+      internalID: 2561937315539530435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

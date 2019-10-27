@@ -5,18 +5,16 @@ using UnityEngine;
 public class PlayerHealthBar : MonoBehaviour
 {
     private string spriteNames = "healthbar";
-    public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     //Reference to player in Player
     Player player;
-    public Sprite theSprite;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = Player.INSTANCE;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        sprites = Resources.LoadAll<Sprite>(spriteNames);
     }
 
     // Update is called once per frame
@@ -47,7 +45,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void spriteDecider(int which)
     {
-            theSprite = sprites[which];
+            spriteRenderer.sprite = sprites[which];
        
     }
 }
