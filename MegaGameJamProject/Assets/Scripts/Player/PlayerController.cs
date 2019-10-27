@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour
 
         if(!player.PlayerInUnderworld()) {
             if(Input.GetButtonDown("Fire1")) {
-                animation.animator.SetTrigger("Attack");
-            } else if(Input.GetButtonDown("Fire2")) {
                 animation.animator.SetTrigger("HeavyAttack");
+            } else if(Input.GetButtonDown("Fire2")) {
+                animation.animator.SetTrigger("Attack");
             }
         }
 
