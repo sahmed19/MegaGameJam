@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
 
         //Dead or Damaged bools
     bool isDead;
-    bool damaged;
     bool isFlipped;
 
         //Establishes Player Health
@@ -49,24 +48,6 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        //If Player takes damage
-        if (damaged)
-        {
-            // damageImage.color = flashColor
-        }
-        else
-        {
-            //damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        }
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //ttack();
-        }
-
-
-        //Reset damaged flad
-        damaged = false;
 
 
     }
@@ -75,9 +56,6 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int amount, Vector2 pushback)
     {
-        //Flag Damage
-        damaged = true;
-
         controller.movement.velocity += pushback;
 
         //Damage taken
@@ -109,27 +87,81 @@ public class Player : MonoBehaviour
         //Checks all colliders in circle of radius size 1f right now
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
             new Vector2(transform.position.x + .5f * (controller.movement.facingRight? 1f : -1f), transform.position.y), .25f);
+        
+        bool somethingHit = false;
+        
         for(int rep = 0; rep < colliders.Length; rep++)
         {
             EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
 
+            
+
             if (hpComponent != null)
             {
                 hpComponent.TakeDamage(50);
+                somethingHit = true;
             }
 
             EnemyMeleeBehavior meleeBehavior = colliders[rep].GetComponent<EnemyMeleeBehavior>();
 
             if(meleeBehavior != null) {
                 meleeBehavior.AddToVelocity(4f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                somethingHit = true;
             }
 
             Statue statue = colliders[rep].GetComponent<Statue>();
             
             if(statue != null) {
                 statue.Break();
+                somethingHit = true;
             }
 
+        }
+
+        if(somethingHit) {
+            CameraFollow.INSTANCE.ShakeScreen(2f);
+        }
+
+    }
+
+    void HeavyAttack() {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(
+        new Vector2(transform.position.x + .75f * (controller.movement.facingRight? 1f : -1f), transform.position.y), new Vector2(1f, .5f), 0f);
+        
+        bool somethingHit = false;
+        for(int rep = 0; rep < colliders.Length; rep++)
+        {
+
+            EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
+
+            if (hpComponent != null)
+            {
+                hpComponent.TakeDamage(100);
+                somethingHit = true;
+            }
+
+            EnemyMeleeBehavior meleeBehavior = colliders[rep].GetComponent<EnemyMeleeBehavior>();
+
+            if(meleeBehavior != null) {
+                meleeBehavior.AddToVelocity(4f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                somethingHit = true;
+            }
+
+            Statue statue = colliders[rep].GetComponent<Statue>();
+            
+            if(statue != null) {
+                statue.Break();
+                somethingHit = true;
+            }
+
+            if(somethingHit) {
+                
+            }
+
+        }
+
+        if(somethingHit) {
+            CameraFollow.INSTANCE.ShakeScreen(4f);
         }
 
     }
