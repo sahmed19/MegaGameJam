@@ -82,6 +82,9 @@ public class UnderworldEnemyBehavior : MonoBehaviour
                 player.TakeDamage(100);
 
             }
+
+            CameraFollow.INSTANCE.ShakeScreen(2f);
+
         }
 
     }

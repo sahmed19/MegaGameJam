@@ -10,11 +10,17 @@ public class EnemyHP : MonoBehaviour
     public int currentHealth;
 
     //Enemy is dead?
-    bool isDead;
+    public bool isDead;
 
     SpriteRenderer spriteRenderer;
     
     public ParticleSystem bloodParticles;
+
+    EnemyMeleeBehavior myMelee;
+    Animator animator;
+    BoxCollider2D collider2D;
+
+    public SpriteRenderer corpse;
 
     void Awake()
     {
@@ -23,11 +29,16 @@ public class EnemyHP : MonoBehaviour
     }
 
     void Start() {
+        myMelee = GetComponent<EnemyMeleeBehavior>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        collider2D = GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(int amount)
     {
+        myMelee.FacePlayer();
+
         // If the enemy = dead af
         if (isDead) return;
 
@@ -54,8 +65,14 @@ public class EnemyHP : MonoBehaviour
 
         Debug.Log("Homie down");
 
-        // After 2 seconds destory the enemy.
-        Destroy(gameObject, 2f);
+        collider2D.enabled = false;
+
+        SpriteRenderer corpsesp = Instantiate(corpse, transform.position + Vector3.down * 100f, Quaternion.identity);
+        corpsesp.flipX = spriteRenderer.flipX;
+
+        bloodParticles.Emit(15);
+
+        animator.SetTrigger("Death");
 
         // Enemy cant be hit??
         //  capsuleCollider.isTrigger = true;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7505403343357453303}
   - component: {fileID: 7505403343357453307}
   - component: {fileID: 7505403343357453308}
+  - component: {fileID: 493843547}
   m_Layer: 27
   m_Name: Enemy
   m_TagString: Untagged
@@ -145,6 +146,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 25
+  sightlineMask:
+    serializedVersion: 2
+    m_Bits: 369098752
+  speed: 0.8
 --- !u!114 &7505403343357453308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,9 +162,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17bbae8ec2eb6b408e6707bcf1cf688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10000
+  startingHealth: 100
   currentHealth: 0
+  isDead: 0
   bloodParticles: {fileID: 7505403343391547898}
+  corpse: {fileID: 4796928180581305466, guid: 31cf1776f022d5045953173a354c3420, type: 3}
+--- !u!114 &493843547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505403343357453302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026c46d4f571945428b504d64138a2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7505403343391547896
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +191,7 @@ GameObject:
   - component: {fileID: 7505403343391547898}
   - component: {fileID: 7505403343391547897}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: BloodParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +227,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

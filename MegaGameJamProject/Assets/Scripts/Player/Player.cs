@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     bool isDead;
     bool isFlipped;
 
+    CircleCollider2D collider2D;
+
         //Establishes Player Health
     void Awake()
     {
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     void Start() {
         controller = GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        collider2D = GetComponent<CircleCollider2D>();
     }
 
     public bool PlayerInUnderworld() {
@@ -99,7 +102,7 @@ public class Player : MonoBehaviour
 
             if (hpComponent != null)
             {
-                hpComponent.TakeDamage(50);
+                hpComponent.TakeDamage(25);
                 somethingHit = true;
             }
 
@@ -139,7 +142,7 @@ public class Player : MonoBehaviour
 
             if (hpComponent != null)
             {
-                hpComponent.TakeDamage(100);
+                hpComponent.TakeDamage(50);
                 somethingHit = true;
             }
 
@@ -181,6 +184,7 @@ public class Player : MonoBehaviour
 
         if (!isFlipped)
         {
+            collider2D.radius = .25f;
             transform.position += Vector3.down * 100f;
             isFlipped = true;
             spark.transform.position = transform.position;
@@ -189,6 +193,7 @@ public class Player : MonoBehaviour
 
         else
         {
+            collider2D.radius = .5f;
             transform.position += Vector3.up * 100f;
             isFlipped = false;
         }
