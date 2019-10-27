@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public static Player INSTANCE;
 
+    PlayerController controller;
+
     /*
     Damage Image & vars
 
@@ -31,6 +33,10 @@ public class Player : MonoBehaviour
     {
         INSTANCE = this;
         currentHealth = startingHealth;
+    }
+
+    void Start() {
+        controller = GetComponent<PlayerController>();
     }
 
     public bool PlayerInUnderworld() {
@@ -95,7 +101,7 @@ public class Player : MonoBehaviour
         //Bruh
         //Checks all colliders in circle of radius size 1f right now
         Collider2D[] colliders = Physics2D.OverlapCircleAll(
-            new Vector2(transform.position.x + .5f, transform.position.y), .25f);
+            new Vector2(transform.position.x + .5f * (controller.movement.facingRight? 1f : -1f), transform.position.y), .25f);
         for(int rep = 0; rep < colliders.Length; rep++)
         {
             EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
@@ -103,6 +109,12 @@ public class Player : MonoBehaviour
             if (hpComponent != null)
             {
                 hpComponent.TakeDamage(50);
+            }
+
+            EnemyMeleeBehavior meleeBehavior = colliders[rep].GetComponent<EnemyMeleeBehavior>();
+
+            if(meleeBehavior != null) {
+                meleeBehavior.AddToVelocity(4f * (controller.movement.facingRight? Vector3.right : Vector3.left));
             }
 
             Statue statue = colliders[rep].GetComponent<Statue>();
