@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public static Player INSTANCE;
 
     PlayerController controller;
+    SpriteRenderer spriteRenderer;
 
     /*
     Damage Image & vars
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
 
     void Start() {
         controller = GetComponent<PlayerController>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public bool PlayerInUnderworld() {
@@ -69,14 +71,19 @@ public class Player : MonoBehaviour
 
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount) {TakeDamage(amount, Vector2.zero);}
+
+    public void TakeDamage(int amount, Vector2 pushback)
     {
         //Flag Damage
         damaged = true;
 
+        controller.movement.velocity += pushback;
+
         //Damage taken
         currentHealth -= amount;
 
+        StartCoroutine(FlashForDamage());
 
         //Player dies
         if (currentHealth <= 0 && !isDead) Death();
@@ -149,5 +156,12 @@ public class Player : MonoBehaviour
 
     }
 
+    IEnumerator FlashForDamage() {
+
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.3f);
+        spriteRenderer.color = Color.white;
+
+    }
 
 }

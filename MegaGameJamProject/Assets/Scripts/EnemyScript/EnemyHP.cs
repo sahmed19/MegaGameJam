@@ -13,6 +13,8 @@ public class EnemyHP : MonoBehaviour
     bool isDead;
 
     SpriteRenderer spriteRenderer;
+    
+    public ParticleSystem bloodParticles;
 
     void Awake()
     {
@@ -31,14 +33,18 @@ public class EnemyHP : MonoBehaviour
 
         // Take hit
         currentHealth -= amount;
-
+        StartCoroutine(FlashForDamage());
+        
+        if(bloodParticles != null) {
+            bloodParticles.Play();
+        }
+        
         // If enemy dies
         if (currentHealth <= 0)
         {
             Death();
         }
 
-        StartCoroutine(FlashForDamage());
     }
 
     void Death()
