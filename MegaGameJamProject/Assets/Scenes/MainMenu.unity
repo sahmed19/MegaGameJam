@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd21e21075cc88e42bea94a007ed4505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadedTime: 10
+  fadedTime: 14
 --- !u!114 &314576997
 MonoBehaviour:
   m_ObjectHideFlags: 0
