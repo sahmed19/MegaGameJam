@@ -122,11 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 7505403343357453302, guid: ac734d2b30978c0409cbf276f3b61580,
+    type: 3}
   rubbleColliderSizeX: 0.5208113
   rubbleColliderSizeY: 0.1492934
   rubbleColliderOffsetX: 0
   rubbleColliderOffsetY: -0.8
+  enemySpawnDelay: 0.1
 --- !u!95 &5108261322051705373
 Animator:
   serializedVersion: 3

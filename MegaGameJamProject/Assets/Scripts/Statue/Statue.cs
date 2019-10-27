@@ -13,6 +13,7 @@ public class Statue : MonoBehaviour
     [SerializeField] float rubbleColliderSizeY;
     [SerializeField] float rubbleColliderOffsetX;
     [SerializeField] float rubbleColliderOffsetY;
+    [SerializeField] float enemySpawnDelay;
 
     void Start()
     {
@@ -31,7 +32,12 @@ public class Statue : MonoBehaviour
         //Spawn enemy if this statue contains one
         if (isEnemy)
         {
-            Instantiate(enemyPrefab, gameObject.transform.position, Quaternion.identity);
+            StartCoroutine(WaitAndSpawn(enemySpawnDelay));
         }
+    }
+    private IEnumerator WaitAndSpawn(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Instantiate(enemyPrefab, gameObject.transform.position, Quaternion.identity);
     }
 }
