@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
 
+    public GameObject spark;
 
     public static Player INSTANCE;
 
@@ -182,6 +183,8 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.down * 100f;
             isFlipped = true;
+            spark.transform.position = transform.position;
+            spark.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
         }
 
         else
@@ -189,6 +192,16 @@ public class Player : MonoBehaviour
             transform.position += Vector3.up * 100f;
             isFlipped = false;
 
+        }
+
+    }
+
+    public float DistanceFromSpark() {
+
+        if(!PlayerInUnderworld()) {
+            return -1f;
+        } else {
+            return (spark.transform.position - transform.position).sqrMagnitude;
         }
 
     }
