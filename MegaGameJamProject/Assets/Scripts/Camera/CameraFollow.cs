@@ -17,11 +17,21 @@ public class CameraFollow : MonoBehaviour {
     private bool flipChanged = false;
 
     public Transform laggingCamera;
+    public GameObject playerOverlayCamera;
 
     public Material material;
 
+    float eqMagnitude;
+
     void Awake() {
         INSTANCE = this;
+    }
+
+    void Update() {
+        eqMagnitude -= Time.deltaTime * 3.0f;
+        if(eqMagnitude < 0) {
+            eqMagnitude = 0f;
+        }
     }
 
 	private void LateUpdate() {
@@ -34,13 +44,14 @@ public class CameraFollow : MonoBehaviour {
 
 		proxyPosition = Vector3.SmoothDamp(proxyPosition, target.position, ref velocity, dampingTime);
 
+        Vector3 elictedProxyPosition = proxyPosition;
+
+        elictedProxyPosition += new Vector3(Mathf.Sin(Time.time * 13.0f) * eqMagnitude, Random.Range(-1f, 1f) * eqMagnitude) * .02f;
 
 		transform.position = new Vector3(
 
-		//14.79243058
-
-		Mathf.Round(proxyPosition.x * PPU)/PPU,
-		Mathf.Round(proxyPosition.y * PPU)/PPU,
+		Mathf.Round(elictedProxyPosition.x * PPU)/PPU,
+		Mathf.Round(elictedProxyPosition.y * PPU)/PPU,
 		-10f
 
 		);
@@ -52,7 +63,14 @@ public class CameraFollow : MonoBehaviour {
         StartCoroutine(MaterialShift());
     }
 
+    public void ShakeScreen(float power) {
+        eqMagnitude += power;
+    }
+
     IEnumerator MaterialShift() {
+
+        playerOverlayCamera.SetActive(true);
+
         for(int i = 0; i < 30; i++) {
 
             material.SetFloat("_Cutoff", 1f - (i / 30.0f));
@@ -60,6 +78,7 @@ public class CameraFollow : MonoBehaviour {
 
         }
 
+        playerOverlayCamera.SetActive(false);
         material.SetFloat("_Cutoff", 0f);
 
     }

@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1")) {
             animation.animator.SetTrigger("Attack");
+        } else if(Input.GetButtonDown("Fire2")) {
+            animation.animator.SetTrigger("HeavyAttack");
         }
 
         if(Input.GetButtonDown("FlipWorld")) {
