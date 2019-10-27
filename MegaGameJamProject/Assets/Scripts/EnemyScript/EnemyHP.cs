@@ -50,11 +50,7 @@ public class EnemyHP : MonoBehaviour
         if(pd.collider != null) {
             Debug.Log("Iscalling");
 
-            if(myMelee != null) {
-                myMelee.enabled = false;
-            } else if(myRanged != null) {
-                myRanged.enabled = false;
-            }
+            
 
             pitfallScore += .6f * Time.deltaTime;
 
@@ -63,6 +59,11 @@ public class EnemyHP : MonoBehaviour
 
             if(pitfallScore >= .99f) {
                 Death(true);
+                if(myMelee != null) {
+                myMelee.enabled = false;
+                } else if(myRanged != null) {
+                    myRanged.enabled = false;
+                }
             }
 
         }

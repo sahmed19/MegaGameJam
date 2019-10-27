@@ -155,12 +155,12 @@ public class Player : MonoBehaviour
             EnemyRangedBehavior rangedBehavior = colliders[rep].GetComponent<EnemyRangedBehavior>();
 
             if(meleeBehavior != null) {
-                meleeBehavior.AddToVelocity(7f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                meleeBehavior.AddToVelocity(5f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
             if(rangedBehavior != null) {
-                rangedBehavior.AddToVelocity(10f * (controller.movement.facingRight? Vector3.right : Vector3.left));
+                rangedBehavior.AddToVelocity(6f * (controller.movement.facingRight? Vector3.right : Vector3.left));
                 somethingHit = true;
             }
 
