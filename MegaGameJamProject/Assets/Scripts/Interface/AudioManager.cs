@@ -11,9 +11,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip nonPersistentUpper;
     [SerializeField] AudioClip persistentAbyss;
     [SerializeField] AudioClip nonPersistentAbyss;
-    AudioSource audio;
-
     public bool gameStarted;
+    AudioSource audioNonPersistent;
+    AudioSource audioPersistent;
 
     //Preserves Audio Source
     private void Awake()
@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         lowPassFilter = GetComponent<AudioLowPassFilter>();
+        audioNonPersistent = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,7 +37,15 @@ public class AudioManager : MonoBehaviour
             {
                 if (!Player.INSTANCE.PlayerInUnderworld())
                 {
-                    gameObject.GetComponent<AudioSource>().PlayOneShot(persistentUpper, 1f);
+                    audioPersistent = new AudioSource();
+                    audioPersistent.clip = nonPersistentUpper;
+                    audioPersistent.volume = 0f;
+                    FadeIn();
+                }
+
+                else
+                {
+ 
                 }
             }
         }
@@ -47,8 +56,24 @@ public class AudioManager : MonoBehaviour
         gameStarted = true;
     }
 
-    void Play(AudioClip clip)
+    void PlayOnce(AudioClip clip)
     {
-        //gameObject.GetComponent<AudioSource>().PlayOneShot(clip, 1f);
+        audioNonPersistent.PlayOneShot(clip, 0f);
+    }
+
+    void PlayPersistent(AudioClip clip)
+    {
+
+    }
+
+    void FadeIn()
+    {
+        float fadeTime = 2f;
+
+        while(audioPersistent.volume < 1f)
+        {
+            audioPersistent.volume += Time.deltaTime / fadeTime;
+            Debug.Log(audioPersistent.volume);
+        }
     }
 }
