@@ -89,7 +89,7 @@ public class CameraFollow : MonoBehaviour {
         for(int i = 0; i < 30; i++) {
 
             if(fisheyeWorked) {
-                fisheye.intensity.value = Mathf.Lerp(-100f, 0f,  i / 30.0f);
+                fisheye.intensity.value = Mathf.Lerp(-50f, 0f,  i / 30.0f);
             }
 
             overlayCamera.orthographicSize = Mathf.Lerp(f * 3f, f, (i/30.0f) % 1f);//2 * Mathf.Abs((.5f - (i/30.0f))));
