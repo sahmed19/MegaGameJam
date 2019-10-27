@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip nonPersistentUpper;
     [SerializeField] AudioClip persistentAbyss;
     [SerializeField] AudioClip nonPersistentAbyss;
+    AudioSource audio;
 
     public bool gameStarted;
 
@@ -27,14 +28,27 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if(Player.INSTANCE != null)
+        if (Player.INSTANCE != null)
         {
             lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 1000 : 5000;
+
+            if (gameStarted)
+            {
+                if (!Player.INSTANCE.PlayerInUnderworld())
+                {
+                    gameObject.GetComponent<AudioSource>().PlayOneShot(persistentUpper, 1f);
+                }
+            }
         }
     }
 
     public void StartGameAudio()
     {
         gameStarted = true;
+    }
+
+    void Play(AudioClip clip)
+    {
+        //gameObject.GetComponent<AudioSource>().PlayOneShot(clip, 1f);
     }
 }
