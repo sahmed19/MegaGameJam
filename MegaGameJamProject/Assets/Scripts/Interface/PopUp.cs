@@ -34,6 +34,11 @@ public class PopUp : MonoBehaviour
                 DestroyText();
             }
         }
+
+        if(poppedUp == true)
+        {
+            popUpText.transform.position = player.gameObject.transform.position + offset;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -42,7 +47,6 @@ public class PopUp : MonoBehaviour
         Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         popUpText.transform.position = collision.gameObject.transform.position + offset;
         popUpText.CrossFadeAlpha(100, fadeSpeed, false);
-        popUpText.transform.SetParent(collision.gameObject.transform);
     }
 
     void TextTransparencyReset()
@@ -54,7 +58,7 @@ public class PopUp : MonoBehaviour
     {
         if(popUpText != null)
         {
-            popUpText.transform.parent = null;
+            poppedUp = false;
             Destroy(popUpText);
         }
     }
