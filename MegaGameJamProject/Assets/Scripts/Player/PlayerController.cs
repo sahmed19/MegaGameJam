@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
         public bool canMove = true;
         public LayerMask obstacles;
-        public int dashCount = 3;
+        public int dashCount = 0;
     }
 
     [System.Serializable]
@@ -78,8 +78,9 @@ public class PlayerController : MonoBehaviour
         movement.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         
-        if(movement.canUseDash && Input.GetButtonDown("Fire2")) {
+        if(movement.canUseDash && movement.dashCount > 0 && Input.GetButtonDown("Fire2")) {
             StartCoroutine(Dash());
+            movement.dashCount--;
         }
 
         if(!player.PlayerInUnderworld()) {

@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyMeleeBehavior : MonoBehaviour
 {
 
-    //Enemy Attack fields
-    public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 25;
     public float seeDistance = 5f;
 
@@ -15,9 +13,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     //Reference to Enemy HP in UpperEnemyHP
     EnemyHP enemyHealth;
-
-    //Attack timer
-    float timer;
 
     Animator animator;
     SpriteRenderer renderer;
@@ -29,8 +24,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public LayerMask sightlineMask;
     public float speed;
 
-    bool xFirst = false;
-
     Vector3 direction;
 
     void Start()
@@ -41,7 +34,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
         enemyHealth = GetComponent<EnemyHP>();
         animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
-
+        renderer.flipX = !facingRight;
     }
 
 
@@ -50,9 +43,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
         
         if(!enemyHealth.isDead) {
-
-            // Add the time since Update was last called to the timer.
-            timer += Time.deltaTime;
             
             if(PlayerInRange()) {
                 animator.SetTrigger("Attack");
@@ -74,7 +64,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         foreach(Collider2D collider in colliders)
         {
-            if(collider.CompareTag("Player") && timer >= timeBetweenAttacks)
+            if(collider.CompareTag("Player"))
             {
                 return true;   
             }
@@ -87,15 +77,9 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
 
         if(PlayerInRange()) {
-            // Reset the timer.
-            timer = 0f;
 
-            // If the player has health to lose...
-            if (player.currentHealth > 0)
-            {
-                // ... damage the player.
-                player.TakeDamage(attackDamage, Vector2.right * 5.0f);
-            }
+            player.TakeDamage(attackDamage, Vector2.right * 5.0f);
+            
         }
     }
 
@@ -105,7 +89,12 @@ public class EnemyMeleeBehavior : MonoBehaviour
     }
 
     bool FacingPlayer() {
-        return (facingRight && (direction.x > 0)) || (!facingRight && (direction.x < 0));
+        //return (facingRight && (direction.x > 0)) || (!facingRight && (direction.x < 0));
+
+        Vector3 directable = facingRight? Vector3.right : Vector3.left;
+
+        return (Vector3.Dot(direction, directable) > -.3f);
+
     }
 
     void Pathfinding() {

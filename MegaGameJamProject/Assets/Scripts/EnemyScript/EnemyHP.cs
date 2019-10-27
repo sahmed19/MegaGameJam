@@ -17,6 +17,7 @@ public class EnemyHP : MonoBehaviour
     public ParticleSystem bloodParticles;
 
     EnemyMeleeBehavior myMelee;
+    EnemyRangedBehavior myRanged;
     Animator animator;
     BoxCollider2D collider2D;
 
@@ -30,6 +31,7 @@ public class EnemyHP : MonoBehaviour
 
     void Start() {
         myMelee = GetComponent<EnemyMeleeBehavior>();
+        myRanged = GetComponent<EnemyRangedBehavior>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         collider2D = GetComponent<BoxCollider2D>();
@@ -37,7 +39,11 @@ public class EnemyHP : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        myMelee.FacePlayer();
+        if(myMelee != null) {
+            myMelee.FacePlayer();
+        } else if(myRanged != null) {
+            myRanged.FacePlayer();
+        }
 
         // If the enemy = dead af
         if (isDead) return;

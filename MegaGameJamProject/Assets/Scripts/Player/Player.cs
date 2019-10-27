@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
 
             if (hpComponent != null)
             {
-                hpComponent.TakeDamage(25);
+                hpComponent.TakeDamage(1);
                 somethingHit = true;
             }
 
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
 
             if (hpComponent != null)
             {
-                hpComponent.TakeDamage(50);
+                hpComponent.TakeDamage(1);
                 somethingHit = true;
             }
 
@@ -185,6 +185,7 @@ public class Player : MonoBehaviour
 
         if (!isFlipped)
         {
+            controller.movement.dashCount = 3;
             collider2D.radius = .25f;
             transform.position += Vector3.down * 100f;
             isFlipped = true;
@@ -194,6 +195,7 @@ public class Player : MonoBehaviour
 
         else
         {
+            controller.movement.dashCount = 0;
             collider2D.radius = .5f;
             transform.position += Vector3.up * 100f;
             isFlipped = false;
@@ -210,6 +212,8 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public int DashCount() {return controller.movement.dashCount;}
 
     IEnumerator FlashForDamage() {
 
