@@ -53,8 +53,8 @@ public class PlayerController : MonoBehaviour
         UnderworldMechanics();
         if(movement.canMove) {
             GatherInput();
+            FacingDirection();
         }
-        FacingDirection();
         AnimatingPlayer();
     }
 

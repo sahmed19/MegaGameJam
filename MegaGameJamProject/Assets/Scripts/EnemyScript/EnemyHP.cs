@@ -12,12 +12,17 @@ public class EnemyHP : MonoBehaviour
     //Enemy is dead?
     bool isDead;
 
+    SpriteRenderer spriteRenderer;
+
     void Awake()
     {
         //Equate HP
         currentHealth = startingHealth;
     }
 
+    void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void TakeDamage(int amount)
     {
@@ -32,6 +37,8 @@ public class EnemyHP : MonoBehaviour
         {
             Death();
         }
+
+        StartCoroutine(FlashForDamage());
     }
 
     void Death()
@@ -46,6 +53,14 @@ public class EnemyHP : MonoBehaviour
 
         // Enemy cant be hit??
         //  capsuleCollider.isTrigger = true;
+
+    }
+
+    IEnumerator FlashForDamage() {
+
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.3f);
+        spriteRenderer.color = Color.white;
 
     }
 
