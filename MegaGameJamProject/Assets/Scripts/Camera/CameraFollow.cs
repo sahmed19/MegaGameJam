@@ -26,12 +26,14 @@ public class CameraFollow : MonoBehaviour {
 
     float eqMagnitude;
 
+    bool death = false;
+
     void Awake() {
         INSTANCE = this;
     }
 
     void Update() {
-        eqMagnitude -= Time.deltaTime * 3.0f;
+        eqMagnitude = Mathf.Clamp(eqMagnitude - Time.deltaTime * 3.0f, 0f, 5f);
         if(eqMagnitude < 0) {
             eqMagnitude = 0f;
         }
@@ -48,6 +50,8 @@ public class CameraFollow : MonoBehaviour {
 		proxyPosition = Vector3.SmoothDamp(proxyPosition, target.position, ref velocity, dampingTime);
 
         Vector3 elictedProxyPosition = proxyPosition;
+
+        if(death) {elictedProxyPosition = Vector3.down * 100f;}
 
         elictedProxyPosition += new Vector3(
             Mathf.Sin(Time.time * 13.0f) * eqMagnitude, 
@@ -72,9 +76,18 @@ public class CameraFollow : MonoBehaviour {
         eqMagnitude += power;
     }
 
-    IEnumerator MaterialShift() {
+    public void Death() {
+        death = true;
+        flipped = !flipped;
+        flipChanged = true;
+        StartCoroutine(MaterialShift(.1f, true));
+        Camera.main.cullingMask = 0;
+        Camera.main.backgroundColor = Color.black;
+    }
 
-        playerOverlayCamera.SetActive(true);
+    IEnumerator MaterialShift(float timeper = .01f, bool death = false) {
+
+        playerOverlayCamera.SetActive(!death);
 
         LensDistortion fisheye;
 
@@ -95,7 +108,7 @@ public class CameraFollow : MonoBehaviour {
             overlayCamera.orthographicSize = Mathf.Lerp(f * 3f, f, (i/30.0f) % 1f);//2 * Mathf.Abs((.5f - (i/30.0f))));
 
             material.SetFloat("_Cutoff", 1f - (i / 30.0f));
-            yield return new WaitForSeconds(.01f);
+            yield return new WaitForSeconds(timeper);
 
         }
 

@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 61068796}
   m_Layer: 0
   m_Name: LaggingCamera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12207,7 +12207,7 @@ GameObject:
   - component: {fileID: 1547908139}
   m_Layer: 0
   m_Name: PlayerCamera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13650,7 +13650,7 @@ PrefabInstance:
     - target: {fileID: 5505660286490349249, guid: 0e4d980d74a0a5647b02806c188bfc2c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5505660286490349250, guid: 0e4d980d74a0a5647b02806c188bfc2c,
         type: 3}

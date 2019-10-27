@@ -76,13 +76,13 @@ public class Player : MonoBehaviour
     //Death Method
     public void Death()
     {
-
-        currentHealth = startingHealth;
-        Checkpoint.RespawnPlayer();
+        isDead = true;
+        //currentHealth = startingHealth;
+        //Checkpoint.RespawnPlayer();
 
         //Turn off player movement
         //Death sequence
-
+        CameraFollow.INSTANCE.Death();
 
     }
 
