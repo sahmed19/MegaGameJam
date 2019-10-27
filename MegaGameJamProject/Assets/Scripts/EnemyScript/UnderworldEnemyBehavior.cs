@@ -18,6 +18,8 @@ public class UnderworldEnemyBehavior : MonoBehaviour
 
     float deathTimer;
 
+    public LayerMask enemy;
+
     void Start() {
         
         player = Player.INSTANCE;
@@ -46,10 +48,24 @@ public class UnderworldEnemyBehavior : MonoBehaviour
     void MoveAndAttackPlayer() {
         Vector3 direction = (player.transform.position - transform.position).normalized;
 
+        
+
+        facingRight = direction.x > 0;
+        renderer.flipX = !facingRight;
+
+        
+
         float distance = (transform.position - player.transform.position).sqrMagnitude;
 
         if(distance > attackDistance) {
+            RaycastHit2D enemyHit = Physics2D.Raycast(transform.position + direction * .4f, direction, .5f, enemy.value);
+            if(enemyHit.collider != null) {
+                return;    
+            }
+
             transform.position += direction * speed * Time.deltaTime;
+            
+
         } else {
             animator.SetTrigger("Attack");
         }
@@ -58,7 +74,7 @@ public class UnderworldEnemyBehavior : MonoBehaviour
 
     void Attack() {
         
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(.6f, -.1f), .35f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + new Vector3(.6f * (facingRight? 1.0f : -1.0f), -.1f), .35f);
 
         foreach(Collider2D collider in colliders) {
             if(collider.CompareTag("Player")) {

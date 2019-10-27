@@ -191,7 +191,6 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.up * 100f;
             isFlipped = false;
-
         }
 
     }
