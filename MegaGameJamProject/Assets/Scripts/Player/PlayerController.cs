@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
         public bool canMove = true;
         public LayerMask obstacles;
+        public int dashCount = 3;
     }
 
     [System.Serializable]

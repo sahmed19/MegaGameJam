@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
 
+
     public GameObject spark;
 
     public static Player INSTANCE;

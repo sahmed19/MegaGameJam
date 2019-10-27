@@ -8,6 +8,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     //Enemy Attack fields
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 25;
+    public float seeDistance = 5f;
 
     //Reference to player in Player
     Player player;
@@ -23,7 +24,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     Vector3 velocity;
 
-    bool facingRight;
+    public bool facingRight;
 
     public LayerMask sightlineMask;
     public float speed;
@@ -34,6 +35,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     void Start()
     {
+        
         // Setting up the references.
         player = Player.INSTANCE;
         enemyHealth = GetComponent<EnemyHP>();
@@ -110,7 +112,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         direction = (player.transform.position - transform.position).normalized;
         
-        RaycastHit2D sightline = Physics2D.Raycast(transform.position, direction, 10f, sightlineMask.value);
+        RaycastHit2D sightline = Physics2D.Raycast(transform.position, direction, seeDistance, sightlineMask.value);
 
 
 

@@ -12,7 +12,7 @@ public class SimpleAnimationLoop : MonoBehaviour
 
     float timer = 0f;
 
-    int frame = 0;
+    public int frame = 0;
 
     void Start() {
         renderer = GetComponent<SpriteRenderer>();
