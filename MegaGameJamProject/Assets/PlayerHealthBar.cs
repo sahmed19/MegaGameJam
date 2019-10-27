@@ -21,31 +21,11 @@ public class PlayerHealthBar : MonoBehaviour
     void Update()
     {
 
-        float healthRegulated = Mathf.Clamp(player.currentHealth, 0f, 100f);
 
-        if(healthRegulated <= 100 && healthRegulated > 75)
-        {
-            spriteDecider(0);
-        }
-        else if(healthRegulated <= 75 && healthRegulated > 50)
-        {
-            spriteDecider(1);
-        }
-        else if(healthRegulated <= 50 && healthRegulated > 25)
-        {
-            spriteDecider(2);
-        }
-        else
-        {
-            spriteDecider(3);
-        }
+        spriteRenderer.color = player.PlayerInUnderworld()? Color.red : Color.white;
+        int healthRegulated = (int) (4 - player.currentHealth);
+        healthRegulated = Mathf.Clamp(healthRegulated, 0, 3);
+        spriteRenderer.sprite = sprites[healthRegulated];
 
-
-    }
-
-    public void spriteDecider(int which)
-    {
-            spriteRenderer.sprite = sprites[which];
-       
     }
 }

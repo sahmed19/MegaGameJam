@@ -36,7 +36,7 @@ public class UnderworldEnemySpawner : MonoBehaviour
         if(playerInUnderworld) {
             timeTracker += Time.deltaTime;
             severityResetTimer = 0f;
-            severity = (player.DistanceFromSpark() + timeTracker * 3f);
+            severity = (player.DistanceFromSpark() + timeTracker * 2f);
 
             Debug.Log("SEVERITY: " + severity + " --- DISTANCE: " + player.DistanceFromSpark() + " --- TIME: " + timeTracker);
 

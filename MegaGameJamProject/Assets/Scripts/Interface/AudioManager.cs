@@ -27,9 +27,11 @@ public class AudioManager : MonoBehaviour
     {
         if (gameStarted)
         {
+            
             if (Player.INSTANCE != null)
             {
-                lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 1000 : 5000;
+                lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 2000 : 5000;
+                audioNonPersistent.volume = Player.INSTANCE.PlayerInUnderworld() ? .3f : .5f;
             }
         }
     }
