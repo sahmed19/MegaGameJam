@@ -8,7 +8,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
     //Enemy Attack fields
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 25;
-    public Vector2 direction;
 
     //Reference to player in Player
     Player player;
@@ -16,16 +15,12 @@ public class EnemyMeleeBehavior : MonoBehaviour
     //Reference to Enemy HP in UpperEnemyHP
     EnemyHP enemyHealth;
 
-    //In Range?
-    bool playerInRange;
-
-    //
-    public LayerMask sightlineMask;
-
     //Attack timer
     float timer;
 
     Animator animator;
+
+    Vector3 velocity;
 
     void Start()
     {
@@ -44,32 +39,47 @@ public class EnemyMeleeBehavior : MonoBehaviour
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
+        if(PlayerInRange()) {
+            animator.SetTrigger("Attack");
+        }
+
+        transform.position += velocity * Time.deltaTime;
+        
+        velocity = Vector3.Lerp(velocity, Vector3.zero, Time.deltaTime * 7.0f);
+
+    }
+
+    public void AddToVelocity(Vector3 v) {
+        velocity += v;
+    }
+
+    bool PlayerInRange() {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + Vector3.right * .25f, .25f);
 
         foreach(Collider2D collider in colliders)
         {
-            if(collider.CompareTag("Player") && timer >= timeBetweenAttacks && enemyHealth.currentHealth > 0)
+            if(collider.CompareTag("Player") && timer >= timeBetweenAttacks)
             {
-
-
-                animator.SetTrigger("Attack");
-                //Attack();    
+                return true;   
             }
         }
 
-        
+        return false;
     }
 
     public void Attack()
     {
-        // Reset the timer.
-        timer = 0f;
 
-        // If the player has health to lose...
-        if (player.currentHealth > 0)
-        {
-            // ... damage the player.
-            player.TakeDamage(attackDamage);
+        if(PlayerInRange()) {
+            // Reset the timer.
+            timer = 0f;
+
+            // If the player has health to lose...
+            if (player.currentHealth > 0)
+            {
+                // ... damage the player.
+                player.TakeDamage(attackDamage);
+            }
         }
     }
 
