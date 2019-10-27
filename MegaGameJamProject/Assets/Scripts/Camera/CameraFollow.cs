@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class CameraFollow : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class CameraFollow : MonoBehaviour {
     public GameObject playerOverlayCamera;
 
     public Material material;
+
+    public PostProcessVolume volume;  
 
     float eqMagnitude;
 
@@ -46,7 +49,9 @@ public class CameraFollow : MonoBehaviour {
 
         Vector3 elictedProxyPosition = proxyPosition;
 
-        elictedProxyPosition += new Vector3(Mathf.Sin(Time.time * 13.0f) * eqMagnitude, Random.Range(-1f, 1f) * eqMagnitude) * .02f;
+        elictedProxyPosition += new Vector3(
+            Mathf.Sin(Time.time * 13.0f) * eqMagnitude, 
+            Random.Range(-1f, 1f) * eqMagnitude) * .05f;
 
 		transform.position = new Vector3(
 
@@ -71,12 +76,33 @@ public class CameraFollow : MonoBehaviour {
 
         playerOverlayCamera.SetActive(true);
 
+        LensDistortion fisheye;
+
+        bool fisheyeWorked = volume.profile.TryGetSettings<LensDistortion> (out fisheye);
+
+        Camera overlayCamera = playerOverlayCamera.GetComponent<Camera>();
+
+        float f = overlayCamera.orthographicSize;
+
+
         for(int i = 0; i < 30; i++) {
+
+            if(fisheyeWorked) {
+                fisheye.intensity.value = Mathf.Lerp(-100f, 0f,  i / 30.0f);
+            }
+
+            overlayCamera.orthographicSize = Mathf.Lerp(f * 3f, f, (i/30.0f) % 1f);//2 * Mathf.Abs((.5f - (i/30.0f))));
 
             material.SetFloat("_Cutoff", 1f - (i / 30.0f));
             yield return new WaitForSeconds(.01f);
 
         }
+
+        if(fisheyeWorked) {
+            fisheye.intensity.value = 0f;
+        }
+
+        overlayCamera.orthographicSize = f;
 
         playerOverlayCamera.SetActive(false);
         material.SetFloat("_Cutoff", 0f);
