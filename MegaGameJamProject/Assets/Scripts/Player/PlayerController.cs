@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public class AnimationAndTurning {
         public SpriteRenderer spriteRenderer;
         public Animator animator;
+        public ParticleSystem ghosts;
     }
 
     public Movement movement;
@@ -80,10 +81,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        if(Input.GetButtonDown("Fire1")) {
-            animation.animator.SetTrigger("Attack");
-        } else if(Input.GetButtonDown("Fire2")) {
-            animation.animator.SetTrigger("HeavyAttack");
+        if(!player.PlayerInUnderworld()) {
+            if(Input.GetButtonDown("Fire1")) {
+                animation.animator.SetTrigger("Attack");
+            } else if(Input.GetButtonDown("Fire2")) {
+                animation.animator.SetTrigger("HeavyAttack");
+            }
         }
 
         if(Input.GetButtonDown("FlipWorld")) {
@@ -106,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
     void AnimatingPlayer() {
         animation.animator.SetFloat("Speed", Mathf.Clamp01(movement.input.sqrMagnitude));
+        
     }
 
     void Locomotion() {
@@ -128,9 +132,13 @@ public class PlayerController : MonoBehaviour
         int dashIterations = 5;
         float dist = movement.dashDistance/(1.0f * dashIterations);
 
+        float[] rotundo = {.5f, 1.35f, 2.3f, 1.35f, .5f};
+
         for(int i = 0; i < dashIterations; i++) {
 
-            Vector2 velocity = direction * dist;
+
+            animation.ghosts.Emit(1);
+            Vector2 velocity = direction * dist * rotundo[i];
 
             velocity.y *= 0.5f;
 

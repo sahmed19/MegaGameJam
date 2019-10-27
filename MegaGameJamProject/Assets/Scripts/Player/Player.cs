@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
             CameraFollow.INSTANCE.ShakeScreen(1f);
         }
 
-        CameraFollow.INSTANCE.ShakeScreen(1f);
+        CameraFollow.INSTANCE.ShakeScreen(.3f);
 
     }
 
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
         }
 
         if(somethingHit) {
-            CameraFollow.INSTANCE.ShakeScreen(2f);
+            CameraFollow.INSTANCE.ShakeScreen(1f);
         }
 
         CameraFollow.INSTANCE.ShakeScreen(1f);
@@ -173,6 +173,8 @@ public class Player : MonoBehaviour
     //Method to flip the world of the player by operation on y
     void FlipWorlds()
     {
+        
+        controller.animation.animator.SetBool("Ghost", !isFlipped);
 
         CameraFollow.INSTANCE.FlipWorld();
 
@@ -184,7 +186,6 @@ public class Player : MonoBehaviour
 
         else
         {
-
             transform.position += Vector3.up * 100f;
             isFlipped = false;
 
