@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
 
         if (!isFlipped)
         {
-            SoundFXManager.instance.PlaySound("Ambience", "Wind1", true);
+            SoundFXManager.instance.PlaySound("Ambience", "Wind1", true, .3f);
             controller.movement.dashCount = 3;
             collider2D.radius = .25f;
             transform.position += Vector3.down * 100f;

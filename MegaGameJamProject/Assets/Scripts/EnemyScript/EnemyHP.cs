@@ -13,7 +13,7 @@ public class EnemyHP : MonoBehaviour
     public bool isDead;
 
     SpriteRenderer spriteRenderer;
-    
+
     public ParticleSystem bloodParticles;
 
     EnemyMeleeBehavior myMelee;
@@ -108,6 +108,7 @@ public class EnemyHP : MonoBehaviour
 
         SoundFXManager.instance.PlaySound("main", "Thunder");
 
+
         Debug.Log("Homie down");
 
         collider2D.enabled = false;
@@ -129,7 +130,7 @@ public class EnemyHP : MonoBehaviour
     }
 
     IEnumerator FlashForDamage() {
-
+        //SoundFXManager.instance.PlaySound("FX", "Blood_Spurt", false, .6f, Random.Range(.8f, 1.2f));
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(.3f);
         spriteRenderer.color = Color.white;

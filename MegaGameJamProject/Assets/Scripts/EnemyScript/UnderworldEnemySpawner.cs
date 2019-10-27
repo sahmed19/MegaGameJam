@@ -12,7 +12,7 @@ public class UnderworldEnemySpawner : MonoBehaviour
     Player player;
 
     bool playerInUnderworld;
-    bool flip = false;
+    //bool flip = false;
 
     void Start() {
         player = Player.INSTANCE;
@@ -26,11 +26,11 @@ public class UnderworldEnemySpawner : MonoBehaviour
 
     void Update() {
 
-        flip = false;
+        //flip = false;
 
         if(playerInUnderworld != player.PlayerInUnderworld()) {
             playerInUnderworld = player.PlayerInUnderworld();
-            flip = true;
+            //flip = true;
         }
 
         if(playerInUnderworld) {
@@ -38,7 +38,7 @@ public class UnderworldEnemySpawner : MonoBehaviour
             severityResetTimer = 0f;
             severity = (player.DistanceFromSpark() + timeTracker * 2f);
 
-            Debug.Log("SEVERITY: " + severity + " --- DISTANCE: " + player.DistanceFromSpark() + " --- TIME: " + timeTracker);
+            //Debug.Log("SEVERITY: " + severity + " --- DISTANCE: " + player.DistanceFromSpark() + " --- TIME: " + timeTracker);
 
             Spawner();
 
