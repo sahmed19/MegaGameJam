@@ -119,8 +119,10 @@ public class Player : MonoBehaviour
         }
 
         if(somethingHit) {
-            CameraFollow.INSTANCE.ShakeScreen(2f);
+            CameraFollow.INSTANCE.ShakeScreen(1f);
         }
+
+        CameraFollow.INSTANCE.ShakeScreen(1f);
 
     }
 
@@ -161,8 +163,10 @@ public class Player : MonoBehaviour
         }
 
         if(somethingHit) {
-            CameraFollow.INSTANCE.ShakeScreen(4f);
+            CameraFollow.INSTANCE.ShakeScreen(2f);
         }
+
+        CameraFollow.INSTANCE.ShakeScreen(1f);
 
     }
 
