@@ -136,8 +136,11 @@ public class PlayerController : MonoBehaviour
 
         float[] rotundo = {.5f, 1.35f, 2.3f, 1.35f, .5f};
 
+        SoundFXManager.instance.PlaySound("FX", "Woosh", false, .4f, .5f);
+
         for(int i = 0; i < dashIterations; i++) {
 
+            
 
             animation.ghosts.Emit(1);
             Vector2 velocity = direction * dist * rotundo[i];

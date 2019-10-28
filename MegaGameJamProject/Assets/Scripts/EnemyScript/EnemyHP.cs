@@ -18,6 +18,7 @@ public class EnemyHP : MonoBehaviour
 
     EnemyMeleeBehavior myMelee;
     EnemyRangedBehavior myRanged;
+    EnemyBossBehavior myBoss;
     Animator animator;
     BoxCollider2D collider2D;
 
@@ -37,6 +38,7 @@ public class EnemyHP : MonoBehaviour
     void Start() {
         myMelee = GetComponent<EnemyMeleeBehavior>();
         myRanged = GetComponent<EnemyRangedBehavior>();
+        myBoss = GetComponent<EnemyBossBehavior>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         collider2D = GetComponent<BoxCollider2D>();
@@ -84,13 +86,16 @@ public class EnemyHP : MonoBehaviour
         } else if(myRanged != null) {
             myRanged.FacePlayer();
         }
+        if(myBoss != null) {
+            myBoss.FacePlayer();
+        }
 
         // Take hit
         currentHealth -= amount;
         StartCoroutine(FlashForDamage());
         
         if(bloodParticles != null) {
-            bloodParticles.Emit(amount * 5);
+            StartCoroutine(Bleed(amount * 3));
         }
         
         // If enemy dies
@@ -106,7 +111,7 @@ public class EnemyHP : MonoBehaviour
         // The enemy is dead.
         isDead = true;
 
-        SoundFXManager.instance.PlaySound("main", "Thunder");
+        SoundFXManager.instance.PlaySound("FX", "Blood_Spurt");
 
 
         Debug.Log("Homie down");
@@ -120,12 +125,21 @@ public class EnemyHP : MonoBehaviour
             Destroy(gameObject);
         }
 
-        bloodParticles.Emit(15);
+        StartCoroutine(Bleed(15));
 
         animator.SetTrigger("Death");
 
         // Enemy cant be hit??
         //  capsuleCollider.isTrigger = true;
+
+    }
+
+    IEnumerator Bleed(int count) {
+
+        for(int i = 0; i < count; i++) {
+            bloodParticles.Emit(3);
+            yield return new WaitForSeconds(.1f);
+        }
 
     }
 

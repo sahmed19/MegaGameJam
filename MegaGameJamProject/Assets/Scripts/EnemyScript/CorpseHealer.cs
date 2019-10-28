@@ -37,10 +37,10 @@ public class CorpseHealer : MonoBehaviour
 
     void FixedUpdate() {
 
-        if(playerInZone) {
-            if(Player.INSTANCE.currentHealth < 4) {
-                time -= Time.fixedDeltaTime;
-            }
+        if(Player.INSTANCE.currentHealth < 4 && playerInZone) {
+            
+            time -= Time.fixedDeltaTime;
+            
 
         } else {
             time += Time.fixedDeltaTime;
@@ -60,7 +60,7 @@ public class CorpseHealer : MonoBehaviour
 
         if(time <= 0.1f) {
             parentSpriteRenderer.color = new Color(1f, .5f, .5f, .6f);
-            SoundFXManager.instance.PlaySound("FX", "Blood_Spurt", false, .8f);
+            SoundFXManager.instance.PlaySound("FX", "Thunder", false, .8f);
             particleSystem.Emit(20);
             Player.INSTANCE.currentHealth++;
             Destroy(gameObject);

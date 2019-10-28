@@ -86,9 +86,12 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public void Attack()
     {
 
+        SoundFXManager.instance.PlaySound("FX", "Woosh", false, .5f, .3f);
+
         if(PlayerInRange()) {
 
             player.TakeDamage(attackDamage, Vector2.right * 5.0f);
+            SoundFXManager.instance.PlaySound("FX", "Enemy_Attack_Melee", false, .5f, Random.Range(.8f, 1.2f));    
             
         }
     }

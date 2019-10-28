@@ -98,7 +98,8 @@ public class Player : MonoBehaviour
             new Vector2(transform.position.x + .5f * (controller.movement.facingRight? 1f : -1f), transform.position.y), .25f);
         
         bool somethingHit = false;
-        
+        SoundFXManager.instance.PlaySound("FX", "Woosh", false, .4f, .7f);
+
         for(int rep = 0; rep < colliders.Length; rep++)
         {
             EnemyHP hpComponent = colliders[rep].GetComponent<EnemyHP>();
@@ -135,7 +136,7 @@ public class Player : MonoBehaviour
 
         if(somethingHit) {
             CameraFollow.INSTANCE.ShakeScreen(1f);
-            SoundFXManager.instance.PlaySound("FX", "Hit_Small");
+            SoundFXManager.instance.PlaySound("FX", "Shove");
         }
 
         CameraFollow.INSTANCE.ShakeScreen(.3f);
@@ -146,6 +147,8 @@ public class Player : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
         new Vector2(transform.position.x + .75f * (controller.movement.facingRight? 1f : -1f), transform.position.y), new Vector2(1f, .7f), 0f);
         
+        SoundFXManager.instance.PlaySound("FX", "Woosh", false, .5f, .5f);
+
         bool somethingHit = false;
         for(int rep = 0; rep < colliders.Length; rep++)
         {
@@ -182,7 +185,7 @@ public class Player : MonoBehaviour
 
         if(somethingHit) {
             CameraFollow.INSTANCE.ShakeScreen(1f);
-            SoundFXManager.instance.PlaySound("FX", "Hit_Small");
+            SoundFXManager.instance.PlaySound("FX", "Player_Attack");
         }
 
         CameraFollow.INSTANCE.ShakeScreen(1f);
@@ -194,7 +197,8 @@ public class Player : MonoBehaviour
     {
         
         controller.animation.animator.SetBool("Ghost", !isFlipped);
-        SoundFXManager.instance.PlaySound("FX", "Bell", false, .5f, Random.Range(.8f, 1.2f));
+        SoundFXManager.instance.PlaySound("FX", "Stage_Change", false, .7f, Random.Range(.8f, 1.2f));
+        //SoundFXManager.instance.PlaySound("FX", "Bell", false, .3f, Random.Range(.8f, 1.2f));
         CameraFollow.INSTANCE.FlipWorld();
 
         if (!isFlipped)
