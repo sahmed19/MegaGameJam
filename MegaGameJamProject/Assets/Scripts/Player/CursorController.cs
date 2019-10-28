@@ -12,7 +12,7 @@ public class CursorController : MonoBehaviour
     }
 
     void Start() {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -30,7 +30,7 @@ public class CursorController : MonoBehaviour
             240f * Input.mousePosition.y / Screen.height);
 
         transform.position = Camera.main.ScreenToWorldPoint(correctedMousePosition);
-        transform.position += Vector3.forward * 10f;
+        transform.position += Vector3.forward * 10f + (Player.INSTANCE.PlayerInUnderworld()? (Vector3.down * 100f) : Vector3.zero);
 
     }
 
