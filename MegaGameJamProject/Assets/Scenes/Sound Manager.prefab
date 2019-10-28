@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9171237900512637867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9171237900512637865}
+  - component: {fileID: 9171237900512637864}
+  m_Layer: 0
+  m_Name: Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9171237900512637865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171237900512637867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9171237900512637864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171237900512637867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83ccc473fc22c144af42c16bc1947ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - Name: FX
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -6667063059649278392, guid: 8193fbcfa94b70a419fb3685d661a735,
+      type: 2}
+    sounds:
+    - Name: Spacy_Sound
+      AudioClip: {fileID: 8300000, guid: 6eacfdf05d139804da408301e747e2a8, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Hit_Small
+      AudioClip: {fileID: 8300000, guid: 47469edcd458c6b48a58be37cfb60bce, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Hit_Big
+      AudioClip: {fileID: 8300000, guid: a00b28696c21f01419d9bab7f4b711bd, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Thunder
+      AudioClip: {fileID: 8300000, guid: 5c2d5d989ac6209488e9de634b153081, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Stage_Change
+      AudioClip: {fileID: 8300000, guid: c1a7846342e8eaf4ebe36f2c9a615174, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Crossbow
+      AudioClip: {fileID: 8300000, guid: 8b8310357ff36324bb2480ef1c235f2f, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Bell
+      AudioClip: {fileID: 8300000, guid: b0952561a0e28bb498f14a8a37771c83, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Blood_Spurt
+      AudioClip: {fileID: 8300000, guid: 5eac81e0f82e70444bd7c64b54084595, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Shove
+      AudioClip: {fileID: 8300000, guid: ef265774afc0ed14c8916953030ad3ab, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Woosh
+      AudioClip: {fileID: 8300000, guid: f70efde106ee8f2418e13e075c74428d, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Enemy_Attack_Melee
+      AudioClip: {fileID: 8300000, guid: d8ad2b326404ae647afd27aa610da7f3, type: 3}
+      audioSource: {fileID: 0}
+    - Name: Player_Attack
+      AudioClip: {fileID: 8300000, guid: 5f22ceab560d9024b848410489510ab7, type: 3}
+      audioSource: {fileID: 0}
+  - Name: Ambience
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    sounds:
+    - Name: Wind1
+      AudioClip: {fileID: 8300000, guid: 637fc275a1767d84ea59376b961b467c, type: 3}
+      audioSource: {fileID: 0}
+  - Name: Music
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    sounds:
+    - Name: MainTheme
+      AudioClip: {fileID: 8300000, guid: 4631229907bbf81448cadc637c2b076e, type: 3}
+      audioSource: {fileID: 0}

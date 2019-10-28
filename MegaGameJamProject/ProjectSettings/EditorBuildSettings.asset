@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AidanWorkspace.unity
     guid: 311feec241d28db40838dbd67b1e8f0a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameStart.unity
     guid: 9ee02c8699f511d498c5e1ebe654245d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sheehan_Workspace.unity
     guid: 1778362616c5ab6488d199e6b0430ccc
+  - enabled: 1
+    path: Assets/Scenes/TayghWorkspace.unity
+    guid: 32ed2754ba00f694294a19cdf77ef70c
   m_configObjects: {}

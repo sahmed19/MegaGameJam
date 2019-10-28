@@ -14,7 +14,6 @@ public class AudioManager : MonoBehaviour
     //Preserves Audio Source
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -22,20 +21,6 @@ public class AudioManager : MonoBehaviour
         lowPassFilter = GetComponent<AudioLowPassFilter>();
         audioNonPersistent = gameObject.GetComponent<AudioSource>();
     }
-
-    private void Update()
-    {
-        if (gameStarted)
-        {
-            
-            if (Player.INSTANCE != null)
-            {
-                lowPassFilter.cutoffFrequency = Player.INSTANCE.PlayerInUnderworld() ? 2000 : 5000;
-                audioNonPersistent.volume = Player.INSTANCE.PlayerInUnderworld() ? .3f : .5f;
-            }
-        }
-    }
-    
         
     
 
