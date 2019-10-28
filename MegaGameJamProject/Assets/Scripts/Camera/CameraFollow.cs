@@ -26,6 +26,9 @@ public class CameraFollow : MonoBehaviour {
 
     float eqMagnitude;
 
+    int culbefore;
+    Color colBefore;
+
     bool death = false;
 
     void Awake() {
@@ -85,8 +88,18 @@ public class CameraFollow : MonoBehaviour {
         flipped = !flipped;
         flipChanged = true;
         StartCoroutine(MaterialShift(.1f, true));
+        culbefore = Camera.main.cullingMask;
         Camera.main.cullingMask = 0;
+        colBefore = Camera.main.backgroundColor;
         Camera.main.backgroundColor = Color.black;
+        StartCoroutine(AntiDeath());
+    }
+
+    IEnumerator AntiDeath() {
+        yield return new WaitForSeconds(5f);
+        Camera.main.cullingMask = culbefore;
+        Camera.main.backgroundColor = colBefore;
+        death = false;
     }
 
     IEnumerator MaterialShift(float timeper = .01f, bool death = false) {
