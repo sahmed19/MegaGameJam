@@ -15,12 +15,17 @@ public class PositionsQueue : MonoBehaviour
         //If Queue Contains anything
         if(posQueue.Count > 0)
         {
+            //stores the values at front of queue
             Vector3 temp = posQueue.Peek();
 
+            //If not close to point
             if (!CloseToPoint(temp))
             {
+                //Continue forward
                 //MoveTowards(temp);
             }
+
+            //Else remove from queue
             else
             {
                 posQueue.Dequeue();
@@ -46,6 +51,7 @@ public class PositionsQueue : MonoBehaviour
         }
     }
 
+    //Checks whether vector param is within distance closeEnough
     private bool CloseToPoint(Vector3 reference)
     {
         //Finds difference vector
